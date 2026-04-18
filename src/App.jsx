@@ -1,13 +1,18 @@
 import './App.css'
-import Home from './components/Home';
+import Home from './components/Home.jsx';
+import background from '../src/assets/background.png';
 
 function App() {
   return (
-    <div>
-      <p> Testing </p>
+    <body className="App" style={{
+      backgroundImage: `url(${background})`,
+      backgroundPosition: 'top',
+      height: '100%',
+      backgroundRepeat: 'no-repeat'
+    }}>
       <Home />
-    </div>
+    </body>
   )
 }
 
-export default App
+export default App;

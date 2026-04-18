@@ -1,0 +1,10 @@
+.title-container {
+    align-items:center;
+}
+
+.tag {
+    border:1px solid #CFA6FF;
+    border-radius:50%;
+    background-color:#d0a6ff9d;
+    color: #CFA6FF;
+}
