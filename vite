@@ -1,0 +1,89 @@
+Last login: Sat Apr 18 19:44:09 on ttys001
+kimtohi@192 ~ % cd ~
+kimtohi@192 ~ % cd Documents/Professional/Learning/repos.nosync
+kimtohi@192 repos.nosync % ls  -la
+total 24
+drwxr-xr-x@  8 kimtohi  staff    256 Apr 16 12:53 .
+drwxr-xr-x  10 kimtohi  staff    320 Apr 18 17:20 ..
+-rw-r--r--@  1 kimtohi  staff  10244 Apr 18 18:55 .DS_Store
+drwxr-xr-x@  7 kimtohi  staff    224 Apr 11 18:14 html-css-practice
+drwxr-xr-x@ 14 kimtohi  staff    448 Apr 18 17:24 imposter-syndrome-killer
+drwxr-xr-x@  5 kimtohi  staff    160 Apr  3 20:01 my-first-repo
+drwxr-xr-x@ 11 kimtohi  staff    352 Apr 14 20:13 parking-lot-tracker
+drwxr-xr-x@ 18 kimtohi  staff    576 Apr 11 18:14 tohi-physio
+kimtohi@192 repos.nosync % cd imposter-syndrome-killer
+kimtohi@192 imposter-syndrome-killer % npm dev run
+Unknown command: "dev"
+
+
+Did you mean this?
+  npm run dev # run the "dev" package script
+To see a list of supported npm commands, run:
+  npm help
+kimtohi@192 imposter-syndrome-killer % npm run dev
+
+> imposter-syndrome-killer@0.0.0 dev
+> vite
+
+
+  VITE v8.0.8  ready in 212 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+2:18:22 PM [vite] (client) hmr update /src/components/TitleContainer.css
+2:19:26 PM [vite] (client) hmr update /src/components/TitleContainer.jsx
+2:19:33 PM [vite] (client) hmr update /src/components/TitleContainer.jsx (x2)
+2:19:37 PM [vite] (client) hmr update /src/components/TitleContainer.css
+2:19:44 PM [vite] (client) hmr update /src/components/TitleContainer.css (x2)
+2:19:47 PM [vite] (client) hmr update /src/components/TitleContainer.css (x3)
+2:19:50 PM [vite] (client) hmr update /src/components/TitleContainer.css (x4)
+2:19:56 PM [vite] (client) hmr update /src/components/TitleContainer.css (x5)
+2:20:01 PM [vite] (client) hmr update /src/components/TitleContainer.css (x6)
+2:20:11 PM [vite] (client) hmr update /src/components/TitleContainer.css (x7)
+2:20:13 PM [vite] (client) hmr update /src/components/TitleContainer.css (x8)
+2:20:22 PM [vite] (client) hmr update /src/components/TitleContainer.css (x9)
+2:20:33 PM [vite] (client) hmr update /src/components/TitleContainer.css (x10)
+2:20:43 PM [vite] (client) hmr update /src/components/TitleContainer.css (x11)
+2:20:49 PM [vite] (client) hmr update /src/components/TitleContainer.css (x12)
+2:20:56 PM [vite] (client) hmr update /src/components/TitleContainer.css (x13)
+2:21:28 PM [vite] (client) hmr update /src/components/TitleContainer.jsx
+2:21:40 PM [vite] (client) hmr update /src/components/TitleContainer.jsx (x2)
+2:21:44 PM [vite] (client) hmr update /src/components/TitleContainer.jsx (x3)
+2:21:52 PM [vite] (client) hmr update /src/components/TitleContainer.jsx (x4)
+2:22:01 PM [vite] (client) hmr update /src/components/TitleContainer.jsx (x5)
+2:22:20 PM [vite] (client) hmr update /src/components/TitleContainer.css
+2:22:27 PM [vite] (client) hmr update /src/components/TitleContainer.css (x2)
+2:22:49 PM [vite] (client) hmr update /src/components/Body.css
+2:23:00 PM [vite] (client) hmr update /src/components/TitleContainer.jsx
+2:23:11 PM [vite] (client) hmr update /src/components/TitleContainer.css
+2:24:21 PM [vite] (client) hmr update /src/components/InputContainer.jsx
+2:24:23 PM [vite] (client) hmr update /src/components/InputContainer.jsx (x2)
+2:25:26 PM [vite] (client) hmr update /src/components/InputContainer.jsx (x3)
+2:26:14 PM [vite] (client) hmr update /src/components/InputContainer.jsx (x4)
+2:27:21 PM [vite] (client) hmr update /src/components/InputContainer.jsx (x5)
+2:27:27 PM [vite] (client) hmr update /src/components/InputContainer.jsx (x6)
+2:29:38 PM [vite] (client) hmr update /src/components/InputContainer.jsx (x7)
+npm install -D @types/react
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

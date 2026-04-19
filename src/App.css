@@ -1,6 +1,42 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('./assets/fonts/manrope-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('./assets/fonts/manrope-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('./assets/fonts/manrope-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('./assets/fonts/manrope-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* src/index.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif; /* This is the magic line */
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 1rem;
-  align-items:center;
-  text-align: center;
+  margin:0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

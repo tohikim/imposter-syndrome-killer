@@ -1,15 +1,23 @@
-import './Body.css';
 import TitleContainer from './TitleContainer.jsx';
 import InputContainer from './InputContainer.jsx';
 import InfoContainer from './InfoContainer.jsx';
 
 
 
-const Body = () => {
+const Body = (props) => {
     return (
-        <div className="body">
+        <div className="body" style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+            paddingTop: '1rem',
+            paddingBottom: '3rem',
+            paddingRight: '5%',
+            paddingLeft: '5%',
+        }}>
             <TitleContainer />
-            <InputContainer />
+            <InputContainer setRoute={props.setRoute} jobDescription={props.jobDescription} setJobDescription={props.setJobDescription}/>
             <InfoContainer />
         </div>
     )
