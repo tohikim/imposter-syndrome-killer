@@ -3,6 +3,7 @@ import "./App.css";
 import { useState } from "react";
 import Home from "./routes/Home";
 import Result from "./routes/Result";
+import { mockLlmResult } from "./__mocks__/llm-result";
 
 const routes = {
   home: Home,
@@ -11,8 +12,10 @@ const routes = {
 
 function App() {
   const [route, setRoute] = useState("home");
-  const Route = routes[route];
   const [jobDescription, setJobDescription] = useState("");
+  const [llmResult, setLlmResult]=useState(mockLlmResult);
+
+  const Route = routes[route];
 
   return (
     <div
@@ -29,6 +32,8 @@ function App() {
         setRoute={setRoute}
         jobDescription={jobDescription}
         setJobDescription={setJobDescription}
+        llmResult={llmResult}
+        setLlmResult={setLlmResult}
       />
     </div>
   );

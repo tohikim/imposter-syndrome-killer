@@ -9,9 +9,7 @@ const Header = (props) => {
   };
   return (
     <>
-      <div
-        className="header-container"
-        style={{
+      <div className="header-container" style={{
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",

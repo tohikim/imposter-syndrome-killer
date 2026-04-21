@@ -48,7 +48,7 @@ const ToggleEdit = (props) => {
           //             }}
           <form onSubmit={onSubmit}>
             <textarea
-              placeholder={props.jobDescription}
+              placeholder="Paste job description here."
               value={props.jobDescription}
               rows={10}
               style={{
