@@ -1,9 +1,8 @@
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
-import ResultBody from "../components/ResultBody.jsx";
-import ToggleEdit from "../components/ToggleEdit.jsx";
-import ColumnOutput from "../components/ColumnOutput.jsx";
-import ExportFile from "../components/ExportFile.jsx";
+import ToggleEdit from "../components/result/ToggleEdit.jsx";
+import ColumnOutput from "../components/result/ColumnOutput.jsx";
+import ExportFile from "../components/result/ExportFile.jsx";
 
 function Result(props) {
   return (
@@ -22,8 +21,8 @@ function Result(props) {
           setJobDescription={props.setJobDescription}
           setLlmResult={props.setLlmResult}
         />
-        <ColumnOutput lmResult={props.llmResult} />
-        <ExportFile llmResult={props.llmResult} />
+        <ColumnOutput llmResult={props.llmResult} />
+        <ExportFile />
       </div>
       <Footer />
     </>

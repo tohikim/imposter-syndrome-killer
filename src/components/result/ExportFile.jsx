@@ -1,10 +1,8 @@
 const ExportFile = () => {
   return (
-    <>
-      <div>
-        <p>hello</p>
-      </div>
-    </>
+    <div>
+      <p>Export file</p>
+    </div>
   );
 };
 
