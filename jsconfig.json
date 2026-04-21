@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    "jsx": "react-jsx", 
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "jsx": "react-jsx",
     "target": "es2020"
   },
   "exclude": ["node_modules"]

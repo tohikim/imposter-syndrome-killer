@@ -21,7 +21,7 @@ const ShareButton = ({ text, url }) => {
   const handleMessengerShare = () => {
     window.open(
       `fb-messenger://share/?link=${encodeURIComponent(url)}&app_id=YOUR_APP_ID`,
-      "_blank"
+      "_blank",
     );
   };
 
@@ -32,9 +32,9 @@ const ShareButton = ({ text, url }) => {
   const handleLinkedInShare = () => {
     window.open(
       `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-        url
+        url,
       )}`,
-      "_blank"
+      "_blank",
     );
   };
 
@@ -51,19 +51,20 @@ const ShareButton = ({ text, url }) => {
     <div>
       {/* Main Share Button */}
       <button
-        className="px-3 py-1 text-white rounded-md flex gap-1 bg-blue-400 font-semibold mx-auto" style={{
-                    borderRadius: '10px',
-                    backgroundColor: '#8B5CFF',
-                    boxShadow: '0 0 20px #a970ffa5, 0 0 40px #8a5cff8e',
-                    fontSize: '0.9rem',
-                    padding: '0.5rem',
-                    paddingRight:'1rem',
-                    paddingLeft:'1rem',
-                    gap:'1rem',
-                    marginBottom: '1rem',
-                    color: 'white',
-                    borderColor: '#8B5CFF',
-                }}
+        className="px-3 py-1 text-white rounded-md flex gap-1 bg-blue-400 font-semibold mx-auto"
+        style={{
+          borderRadius: "10px",
+          backgroundColor: "#8B5CFF",
+          boxShadow: "0 0 20px #a970ffa5, 0 0 40px #8a5cff8e",
+          fontSize: "0.9rem",
+          padding: "0.5rem",
+          paddingRight: "1rem",
+          paddingLeft: "1rem",
+          gap: "1rem",
+          marginBottom: "1rem",
+          color: "white",
+          borderColor: "#8B5CFF",
+        }}
         onClick={() => setShareNow(!shareNow)}
       >
         <span> Share {!shareNow && <span> Now </span>} </span>
