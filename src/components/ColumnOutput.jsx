@@ -1,6 +1,6 @@
 import Skillcard from "./Skillcard";
 
-const ColumnOutput = () => {
+const ColumnOutput = (props) => {
   return (
     <>
       <div>
@@ -40,6 +40,8 @@ const ColumnOutput = () => {
               fontWeight: "100",
             }}
           >
+            {props.honestDecoder.theRealRole}
+
             They want a lead-level candidate. In plain English: runway is
             building a first-of-its-kind tool for teams to track, automate, and
             collaborate on their mobile app releases. we're already used by

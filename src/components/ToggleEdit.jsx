@@ -10,6 +10,11 @@ const ToggleEdit = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
+    if (!props.jobDescription) {
+      alert("Please enter a job description");
+      return;
+    }
+
     /** @todo submit job description to LLM */
   };
 

@@ -22,7 +22,7 @@ function Result(props) {
           setJobDescription={props.setJobDescription}
           setLlmResult={props.setLlmResult}
         />
-        <ColumnOutputl lmResult={props.llmResult} />
+        <ColumnOutput lmResult={props.llmResult} />
         <ExportFile llmResult={props.llmResult} />
       </div>
       <Footer />
