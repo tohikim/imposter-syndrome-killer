@@ -1,5 +1,5 @@
 import "./App.css";
-// import background from '../src/assets/background.png';
+// import background from './assets/background2.jpg';
 import { useState } from "react";
 import Home from "./routes/Home";
 import Result from "./routes/Result";
@@ -21,7 +21,7 @@ function App() {
     <div
       className="App"
       style={{
-        backgroundColor: "black",
+        background:'black',
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",

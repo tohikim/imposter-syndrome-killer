@@ -30,8 +30,8 @@ const Header = (props) => {
             className="logo"
             src={logo}
             style={{
-              height: 40,
-              width: 150,
+              height: 50,
+              width: 160,
               padding: 0,
               margin: 0,
             }}

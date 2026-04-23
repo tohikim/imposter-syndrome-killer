@@ -58,11 +58,12 @@ const ToggleEdit = (props) => {
               rows={10}
               style={{
                 marginTop: "0.2rem",
-                marginBottom: "0.2rem",
                 backgroundColor: "rgba(0,0,0,0.5)",
                 borderRadius: "15px",
                 color: "white",
                 padding: "0.3rem",
+                paddingBottom:0,
+                marginBottom:0,
                 fontWeight: "100",
                 width: "80vw",
               }}
@@ -75,7 +76,7 @@ const ToggleEdit = (props) => {
                 backgroundColor: "#8B5CFF",
                 boxShadow: "0 0 20px #a970ffa5, 0 0 40px #8a5cff8e",
                 fontSize: "0.9rem",
-                padding: "0.3rem",
+                padding: "0.5rem",
                 width: "80vw",
                 marginTop: 0,
                 marginBottom: "2rem",
