@@ -1,4 +1,8 @@
+import ActionCheckBox from "./ActionCheckBox";
+
+
 const ActionPlan = ({ llmResult }) => {
+
   return (
     <div>
       <div
@@ -31,12 +35,11 @@ const ActionPlan = ({ llmResult }) => {
         <ul>
           {llmResult.skills.map((skill) => {
             return (
-              <div style={{ marginBottom: 20 }}>
+              <div key={skill.title} style={{ marginBottom: 20 }}>
                 <h6
                   style={{
                     fontSize: "1rem",
-                    paddingBottom: "0.7rem",
-                    marginBottom: "0.6rem",
+                    marginBottom: "0.5rem",
                     textAlign: "left",
                     padding: 0,
                     margin: 0,
@@ -46,20 +49,7 @@ const ActionPlan = ({ llmResult }) => {
                   {skill.title}
                 </h6>
                 {skill.items.map((item) => {
-                  return (
-                    <p
-                      style={{
-                        fontSize: "0.9rem",
-                        textAlign: "justify",
-                        padding: "0",
-                        margin: "0",
-                        fontWeight: "300",
-                        marginBottom: "0.2rem",
-                      }}
-                    >
-                      {item}
-                    </p>
-                  );
+                  return <ActionCheckBox key={item} item={item} />;
                 })}
               </div>
             );
