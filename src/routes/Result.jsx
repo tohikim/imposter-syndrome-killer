@@ -24,7 +24,6 @@ function Result(props) {
         <ColumnOutput llmResult={props.llmResult} />
         <ExportFile />
       </div>
-      <Footer />
     </>
   );
 }

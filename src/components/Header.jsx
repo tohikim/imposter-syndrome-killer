@@ -1,5 +1,5 @@
-import logo from "../assets/logo.png";
-import homeicon from "../assets/home-icon.png";
+import logo from "../assets/logo.jpeg";
+import shareicon from "../assets/share.png";
 
 const Header = (props) => {
   const handleClick = (e) => {
@@ -30,12 +30,20 @@ const Header = (props) => {
             className="logo"
             src={logo}
             style={{
-              height: 50,
-              width: 160,
-              padding: 0,
+              height: 30,
+              width: 30,
+              padding: '1.2rem',
               margin: 0,
             }}
           />
+        </div>
+        <div style={{
+          color:'var(--color-secondary)',
+        }}>
+          <p style={{
+            fontSize:'1rem',
+            padding:'0.5rem 0 0 1rem',
+          }}>ISK 1.0</p>
         </div>
         <div
           className="icon-container"
@@ -54,13 +62,13 @@ const Header = (props) => {
             }}
           >
             <img
-              className="home-icon"
-              src={homeicon}
+              className="shareicon"
+              src={shareicon}
               style={{
-                height: 50,
-                width: 50,
-                padding: 0,
+                height: 70,
+                width: 70,
                 margin: 0,
+                padding:0
               }}
             />
           </button>

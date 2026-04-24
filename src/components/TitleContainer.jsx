@@ -5,63 +5,84 @@ const TitleContainer = () => {
       style={{
         display: "flex",
         flexDirection: "column",
+        justifyContent:'center',
+        alignSelf: "center",
         alignItems: "center",
-        width: "fit-content",
-        gap: "0",
+        gap: "20px",
         paddingTop: "2rem",
         paddingBotton: "2rem",
+        height:'30vh',
       }}
     >
+      <h4
+        style={{
+          fontSize: "1.4rem",
+          fontWeight: "500",
+          margin: "0",
+          padding: "0",
+          color: "var(--color-bg-black)",
+        }}
+      >
+        Kill your imposter syndrome
+      </h4>
       <div
         className="tag"
         style={{
-          border: "1px solid #CFA6FF",
-          borderRadius: "50px",
-          backgroundColor: "#a5a4a761",
-          color: "#CFA6FF",
-          width: "fit-content",
-          height: "fit-content",
-          fontSize: "0.9rem",
-          margin: "0",
-          marginBottom: "1rem",
-          padding: "0",
-          paddingRight: "1rem",
-          paddingLeft: "1rem",
+          display: "flex",
+          flexDirection: "row",
+          gap: "10px",
+          margin: 0,
+          padding: 0,
         }}
       >
         <p
           style={{
+            border: "1px solid var(--color-third)",
+            borderRadius: "50px",
+            color: "var(--color-secondary)",
+            width: "fit-content",
+            height: "fit-content",
+            fontSize: "16px",
             margin: "0",
-            padding: "0.2rem",
+            padding: "0.5rem",
+            paddingRight: "1rem",
+            paddingLeft: "1rem",
           }}
         >
-          Decode any job 💼
+          Honest job decoder
         </p>
-      </div>
-      <div
-        className="title"
-        style={{
-          fontSize: "1.4rem",
-          padding: "0.2rem",
-          margin: "0",
-          textShadow: "0 0 20px #A970FF, 0 0 40px #8B5CFF",
-        }}
-      >
-        <h4
+        <p
           style={{
+            border: "1px solid var(--color-third)",
+            borderRadius: "50px",
+            color: "var(--color-secondary)",
+            width: "fit-content",
+            height: "fit-content",
+            fontSize: "16px",
             margin: "0",
-            padding: "0",
-            color: "white",
+            padding: "0.5rem",
+            paddingRight: "1rem",
+            paddingLeft: "1rem",
           }}
         >
-          Kill Your Imposter Syndrome
-        </h4>
-      </div>
-      <div className="description">
-        <p style={{ color: "#E6D6FF", fontSize: "0.9rem" }}>
-          Paste job description. We'll decode corporate speak and surface what
-          actually matters.
+          Skill assessment
         </p>
+        {/* <p
+          style={{
+            border: "1px solid var(--color-third)",
+            borderRadius: "50px",
+            color: "var(--color-secondary)",
+            width: "fit-content",
+            height: "fit-content",
+            fontSize: "16px",
+            margin: "0",
+            padding: "0.5rem",
+            paddingRight: "1rem",
+            paddingLeft: "1rem",
+          }}
+        >
+          Action plan
+        </p> */}
       </div>
     </div>
   );

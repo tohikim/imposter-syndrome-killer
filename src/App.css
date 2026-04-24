@@ -1,38 +1,14 @@
-@font-face {
-  font-family: "Geist";
-  src: url("./assets/fonts/geist-regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("./assets/fonts/geist-bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("./assets/fonts/geist-medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("./assets/fonts/geist-light.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-/* src/index.css */
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Geist", sans-serif;
+  font-family: "Intel", sans-serif;
+  --color-primary: #000000;
+  --color-secondary: #808080;
+  --color-third:#f0efef;
+  --color-accent: #000000;
+  --color-background:#e3e3e370;
+  
+  /* Variety/Semantic Colors */
+  --color-bg-white: #ffffff;
+  --color-bg-black:#000000;
   /* This is the magic line */
 }
 

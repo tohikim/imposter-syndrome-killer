@@ -9,7 +9,7 @@ const Footer = () => {
           display: "flex",
           flexDirection: "column",
           height: "fit-content",
-          color: "#CFA6FF",
+          color: 'var(--color-primary)',
           fontSize: "0.9rem",
           alignItems: "center",
           textAlign: "center",

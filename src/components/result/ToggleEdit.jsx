@@ -34,14 +34,14 @@ const ToggleEdit = (props) => {
           onClick={handleClick}
           style={{
             borderRadius: "10px",
-            backgroundColor: "#8B5CFF",
-            boxShadow: "0 0 20px #a970ffa5, 0 0 40px #8a5cff8e",
+            backgroundColor: "var(--color-accent)",
+            boxShadow: "0 0 20px var(--color-primary), 0 0 40px var(--color-primary)",
             fontSize: "0.9rem",
             padding: "0.5rem",
             width: "80vw",
             marginBottom: "1rem",
-            color: "white",
-            borderColor: "#8B5CFF",
+            color: "var(--color-bg-white)",
+            borderColor: "var(--color-accent)",
           }}
         >
           View/Edit original job description
@@ -58,9 +58,9 @@ const ToggleEdit = (props) => {
               rows={10}
               style={{
                 marginTop: "0.2rem",
-                backgroundColor: "rgba(0,0,0,0.5)",
+                backgroundColor: "var(--color-bg-black)",
                 borderRadius: "15px",
-                color: "white",
+                color: "var(--color-bg-white)",
                 padding: "0.3rem",
                 paddingBottom:0,
                 marginBottom:0,
@@ -73,15 +73,15 @@ const ToggleEdit = (props) => {
               type={"submit"}
               style={{
                 borderRadius: "10px",
-                backgroundColor: "#8B5CFF",
-                boxShadow: "0 0 20px #a970ffa5, 0 0 40px #8a5cff8e",
+                backgroundColor: "var(--color-accent)",
+                boxShadow: "0 0 20px var(--color-primary), 0 0 40px var(--color-primary)",
                 fontSize: "0.9rem",
                 padding: "0.5rem",
                 width: "80vw",
                 marginTop: 0,
                 marginBottom: "2rem",
-                color: "white",
-                borderColor: "#8B5CFF",
+                color: "var(--color-bg-white)",
+                borderColor: "var(--color-accent)",
               }}
             >
               Submit

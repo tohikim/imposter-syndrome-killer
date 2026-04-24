@@ -54,16 +54,16 @@ const ShareButton = ({ text, url }) => {
         className="px-3 py-1 text-white rounded-md flex gap-1 bg-blue-400 font-semibold mx-auto"
         style={{
           borderRadius: "10px",
-          backgroundColor: "#8B5CFF",
-          boxShadow: "0 0 20px #a970ffa5, 0 0 40px #8a5cff8e",
+          backgroundColor: "var(--color-accent)",
+          boxShadow: "0 0 20px var(--color-primary), 0 0 40px var(--color-primary)",
           fontSize: "0.9rem",
           padding: "0.5rem",
           paddingRight: "1rem",
           paddingLeft: "1rem",
           gap: "1rem",
           marginBottom: "1rem",
-          color: "white",
-          borderColor: "#8B5CFF",
+          color: "var(--color-bg-white)",
+          borderColor: "var(--color-accent)",
         }}
         onClick={() => setShareNow(!shareNow)}
       >

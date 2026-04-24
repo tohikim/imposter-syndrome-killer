@@ -13,24 +13,34 @@ function Home(props) {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          paddingTop: "0",
-          paddingBottom: "3rem",
-          paddingRight: "5%",
-          paddingLeft: "5%",
+          height: "100vh",
+          // verticalAlign: "space-between",
+          justifyContent: "space-between",
+          fontFamily: "var(--font-family)",
+          padding:0,
+          margin:0
         }}
       >
         <TitleContainer />
-        <InputContainer
-          setRoute={props.setRoute}
-          jobDescription={props.jobDescription}
-          setJobDescription={props.setJobDescription}
-          setLlmResult={props.setLlmResult}
-        />
-        <InfoContainer />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height:'fit-content',
+            fontFamily: "var(--font-family)",
+            margin:0,
+            padding:0,
+          }}
+        >
+          <InfoContainer />
+          <InputContainer
+            setRoute={props.setRoute}
+            jobDescription={props.jobDescription}
+            setJobDescription={props.setJobDescription}
+            setLlmResult={props.setLlmResult}
+          />
+        </div>
       </div>
-      <Footer />
     </>
   );
 }

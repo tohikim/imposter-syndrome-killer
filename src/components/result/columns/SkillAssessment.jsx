@@ -6,10 +6,10 @@ const SkillAssessment = ({ llmResult }) => {
       className="skill-check"
       style={{
         width: "80vw",
-        color: "#E6D6FF",
+        color: "var(--color-secondary)",
         marginTop: "2rem",
-        border: "1px solid #CFA6FF",
-        backgroundColor: "rgba(0,0,0,0.5)",
+        border: "1px solid var(--color-primary)",
+        backgroundColor: "var(--color-bg-black)",
         borderRadius: "15px",
         paddingBottom: "1rem",
         gap: "1rem",
