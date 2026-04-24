@@ -1,0 +1,49 @@
+{
+  "decoder": {
+    "roleTitle": "L3 Backend Software Engineer",
+    "roleOverview": "This role focuses on building and scaling the core backend services that power the company's mobile release management platform. You will be responsible for designing robust APIs, optimizing database performance, and integrating heavily with third-party developer tools (like GitHub, Jira, and CI/CD pipelines). While the title is L3 (traditionally mid-level), the expectations lean toward taking significant ownership of complex architectural decisions and cross-functional feature delivery.",
+    "honestTake": "You're walking into a fast-paced environment where backend stability essentially *is* the product. You'll likely spend as much time untangling edge cases in messy third-party API integrations as you will writing fresh code. It's a high-visibility role: you'll get immediate credit for performance wins, but you're also the last line of defense when a customer's release pipeline breaks. Expect some full-stack bleed-over based on the required tech stack."
+  },
+  "skills": [
+    {
+      "label": "React",
+      "actionItems": [
+        "Review how React components consume RESTful APIs, specifically focusing on asynchronous state management and error handling.",
+        "Understand core React hooks (useEffect, useState, useContext) to effectively debug frontend-to-backend integration issues.",
+        "Prepare for full-stack system design questions that bridge backend API design with React client architectures."
+      ]
+    },
+    {
+      "label": "TypeScript",
+      "actionItems": [
+        "Brush up on advanced TypeScript features like generic types, utility types, and interfaces used to define strict API contracts.",
+        "Review best practices for error handling and asynchronous patterns (Promises, async/await) in a Node.js/TS backend context.",
+        "Practice answering interview questions on how to safely migrate legacy JavaScript codebases to strictly-typed TypeScript."
+      ]
+    },
+    {
+      "label": "Go",
+      "actionItems": [
+        "Deep dive into Go's concurrency models: demonstrate a strong grasp of Goroutines, Channels, Context, and WaitGroups.",
+        "Study common Go architectural patterns for building highly concurrent, low-latency, and scalable microservices.",
+        "Practice writing comprehensive table-driven tests and utilizing Go's built-in benchmarking tools."
+      ]
+    },
+    {
+      "label": "REST",
+      "actionItems": [
+        "Master RESTful API design principles: proper use of HTTP verbs, idempotent methods, resource nesting, and semantic status codes.",
+        "Prepare to design a rate-limiting, caching, or pagination strategy for a high-traffic, data-heavy endpoint.",
+        "Review API security fundamentals, including implementing OAuth2 flows, JWT validation, and CORS policies."
+      ]
+    },
+    {
+      "label": "LESS",
+      "actionItems": [
+        "Understand the fundamentals of CSS preprocessors (variables, mixins, nesting) to support occasional legacy frontend tasks.",
+        "Review how LESS compiles to standard CSS and strategies for debugging compiled style scopes.",
+        "Familiarize yourself with modern alternatives (like CSS Modules or Tailwind), as interviewers may ask how you would architect moving away from LESS."
+      ]
+    }
+  ]
+}

@@ -1,13 +1,22 @@
+import { getLlmOutput } from "../api/llm";
+
 const InputContainer = (props) => {
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+
 
     if (!props.jobDescription) {
       alert("Please enter a job description");
       return;
     }
 
-    /** @todo submit job description to LLM */
+    const llmOutput = await getLlmOutput(props.jobDescription);
+
+    const parsedOutput = JSON.parse(llmOutput);
+
+    console.log(parsedOutput);
+
+    props.setLlmResult(parsedOutput);
 
     props.setRoute("result");
   };

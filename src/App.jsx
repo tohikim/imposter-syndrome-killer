@@ -3,7 +3,6 @@ import "./App.css";
 import { useState } from "react";
 import Home from "./routes/Home";
 import Result from "./routes/Result";
-import { mockLlmResult } from "./__mocks__/llm-result";
 
 const routes = {
   home: Home,
@@ -13,7 +12,7 @@ const routes = {
 function App() {
   const [route, setRoute] = useState("home");
   const [jobDescription, setJobDescription] = useState("");
-  const [llmResult, setLlmResult]=useState(mockLlmResult);
+  const [llmResult, setLlmResult] = useState();
 
   const Route = routes[route];
 
@@ -21,7 +20,7 @@ function App() {
     <div
       className="App"
       style={{
-        background:'black',
+        background: "black",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",

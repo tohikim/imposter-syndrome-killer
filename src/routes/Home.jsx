@@ -26,6 +26,7 @@ function Home(props) {
           setRoute={props.setRoute}
           jobDescription={props.jobDescription}
           setJobDescription={props.setJobDescription}
+          setLlmResult={props.setLlmResult}
         />
         <InfoContainer />
       </div>
