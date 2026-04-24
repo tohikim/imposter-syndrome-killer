@@ -1,8 +1,6 @@
 import ActionCheckBox from "./ActionCheckBox";
 
-
 const ActionPlan = ({ llmResult }) => {
-
   return (
     <div>
       <div
@@ -39,7 +37,7 @@ const ActionPlan = ({ llmResult }) => {
                 <h6
                   style={{
                     fontSize: "1rem",
-                    marginBottom: "0.5rem",
+                    marginBottom: "0.5 rem",
                     textAlign: "left",
                     padding: 0,
                     margin: 0,
