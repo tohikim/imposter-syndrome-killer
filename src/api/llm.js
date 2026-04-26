@@ -1,6 +1,11 @@
 import axios from "axios";
+import result from "../__mocks__/llm-result.json";
 
 export const getLlmOutput = async (jobDescription) => {
+  if (import.meta.env.VITE_DEBUG === "1" && jobDescription.length < 5) {
+    return result;
+  }
+
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${import.meta.env.VITE_LLM_API_KEY}`;
   const payload = {
     systemInstruction: {
@@ -62,5 +67,5 @@ export const getLlmOutput = async (jobDescription) => {
 
   const response = await axios.post(url, payload);
 
-  return response.data;
+  return response.data.candidates?.[0].content?.parts?.[0]?.text;
 };

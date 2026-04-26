@@ -31,7 +31,7 @@ const SkillAssessment = ({ llmResult }) => {
       </h4>
       <ul>
         {llmResult.skills.map((skill) => {
-          return <Skillcard key={skill.title} value={skill.title} />;
+          return <Skillcard key={skill.label} value={skill.label} />;
         })}
       </ul>
     </div>

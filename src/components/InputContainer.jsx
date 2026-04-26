@@ -12,12 +12,7 @@ const InputContainer = (props) => {
 
     const llmOutput = await getLlmOutput(props.jobDescription);
 
-    const parsedOutput = JSON.parse(llmOutput);
-
-    console.log(parsedOutput);
-
-    props.setLlmResult(parsedOutput);
-
+    props.setLlmResult(llmOutput);
     props.setRoute("result");
   };
   return (

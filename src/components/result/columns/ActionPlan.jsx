@@ -33,7 +33,7 @@ const ActionPlan = ({ llmResult }) => {
         <ul>
           {llmResult.skills.map((skill) => {
             return (
-              <div key={skill.title} style={{ marginBottom: 20 }}>
+              <div key={skill.label} style={{ marginBottom: 20 }}>
                 <h6
                   style={{
                     fontSize: "1rem",
@@ -44,9 +44,9 @@ const ActionPlan = ({ llmResult }) => {
                     fontWeight: "400",
                   }}
                 >
-                  {skill.title}
+                  {skill.label}
                 </h6>
-                {skill.items.map((item) => {
+                {skill.actionItems.map((item) => {
                   return <ActionCheckBox key={item} item={item} />;
                 })}
               </div>

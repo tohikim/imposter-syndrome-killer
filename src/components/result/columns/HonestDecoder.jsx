@@ -1,6 +1,7 @@
-import {useState} from 'react';
+import { useState } from "react";
 
 const HonestDecoder = ({ llmResult }) => {
+  console.log({ llmResult });
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -17,7 +18,7 @@ const HonestDecoder = ({ llmResult }) => {
           paddingBottom: "1rem",
           gap: "1rem",
           padding: "1.5rem",
-          textAlign:'left',
+          textAlign: "left",
         }}
       >
         <h4
@@ -54,7 +55,7 @@ const HonestDecoder = ({ llmResult }) => {
             marginBottom: "1rem",
           }}
         >
-          {llmResult.honestDecoder.theRealRole}
+          {"llmResult.decoder.roleOverview"}
         </p>
         <h6
           style={{
@@ -77,20 +78,20 @@ const HonestDecoder = ({ llmResult }) => {
             marginBottom: "1rem",
           }}
         >
-          {llmResult.honestDecoder.brutallyHonestTake.overview}
+          {llmResult.decoder.honestTake}
         </p>
         <button
           onClick={() => setToggle(!toggle)}
           style={{
             fontSize: "1rem",
             textAlign: "left",
-            padding: '0.5rem',
+            padding: "0.5rem",
             margin: 0,
             fontWeight: "400",
-            backgroundColor:'transparent',
-            border:'1pt solid var(--color-secondary)',
-            borderRadius:'15px',
-            color:'var(--color-secondary)',
+            backgroundColor: "transparent",
+            border: "1pt solid var(--color-secondary)",
+            borderRadius: "15px",
+            color: "var(--color-secondary)",
           }}
         >
           What does this mean?
@@ -98,14 +99,14 @@ const HonestDecoder = ({ llmResult }) => {
         {toggle && (
           <p
             style={{
-              marginTop:'0.5rem',
+              marginTop: "0.5rem",
               fontSize: "0.9rem",
               textAlign: "justify",
               fontWeight: "300",
-              paddingLeft:'6%'
+              paddingLeft: "6%",
             }}
           >
-            {llmResult.honestDecoder.brutallyHonestTake.meaning}
+            {llmResult.decoder.honestTake}
           </p>
         )}
       </div>

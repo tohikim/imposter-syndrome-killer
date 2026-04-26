@@ -74,7 +74,7 @@ const ToggleEdit = (props) => {
               style={{
                 borderRadius: "10px",
                 backgroundColor: "var(--color-accent)",
-                boxShadow: "0 0 20px var(--color-primary), 0 0 40px var(--color-primary)",
+                boxShadow: "0 0 20px var(--color-prim ary), 0 0 40px var(--color-primary)",
                 fontSize: "0.9rem",
                 padding: "0.5rem",
                 width: "80vw",
