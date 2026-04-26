@@ -3,27 +3,19 @@ import { useState } from "react";
 const statuses = [
   {
     label: "Click to set",
-    color: "transparent",
-    borderColor: "white",
-    textColor: "white",
+    background:'transparent',
   },
   {
     label: "I know this",
-    color: "green",
-    borderColor: "white",
-    textColor: "white",
+    background:'#EBF7ED',
   },
   {
     label: "Learning",
-    color: "yellow",
-    borderColor: "white",
-    textColor: "black",
+    background:'#FEF6D5'
   },
   {
     label: "No clue",
-    color: "red",
-    borderColor: "white",
-    textColor: "white",
+    background:'#FCEBEB',
   },
 ];
 
@@ -47,17 +39,43 @@ const Skillcard = (props) => {
     <button
       onClick={handleClick}
       style={{
-        border: `1px solid ${status.borderColor}`,
-        borderRadius: 5,
-        padding: 10,
-        marginBottom: 10,
-        background: status.color,
-        color: status.textColor,
-        marginRight: 10,
+        border: 0,
+        borderRadius: ((props.index===0) ? '15px 15px 0 0': (props.index === props.lastIndex) ? '0 0 15px 15px':0),
+        padding: 0,
+        margin: "0 2rem 0 0",
+        background: status.background,
+        fontSize: "18px",
+        width:'100%'
       }}
     >
-      <p>{props.value}</p>
-      <p>{status.label}</p>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          borderBottom: (props.index === props.lastIndex) ? 0 : "1px solid var(--color-third)",
+          width: "100%",
+          alignitems: "center",
+          padding: 0,
+          margin: 0,
+        }}
+      >
+        <p
+          style={{
+            color: "var(--color-secondary)",
+            fontSize: "18px",
+            padding: "1rem",
+            margin: 0,
+            verticalAlign: "center",
+          }}
+        >
+          {props.value}
+        </p>
+        <p style={{
+          padding:'1rem',
+          margin:0
+        }}>{status.label}</p>
+      </div>
     </button>
   );
 };

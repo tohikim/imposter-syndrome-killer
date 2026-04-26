@@ -1,13 +1,10 @@
-import Header from "../components/Header.jsx";
-import Footer from "../components/Footer.jsx";
-import ToggleEdit from "../components/result/ToggleEdit.jsx";
+import HeaderResult from "../components/HeaderResult";
 import ColumnOutput from "../components/result/ColumnOutput.jsx";
-import ExportFile from "../components/result/ExportFile.jsx";
 
 function Result(props) {
   return (
     <>
-      <Header setRoute={props.setRoute} />
+      <HeaderResult setRoute={props.setRoute} />
       <div
         style={{
           display: "flex",
@@ -16,13 +13,13 @@ function Result(props) {
           textAlign: "center",
         }}
       >
-        <ToggleEdit
+        {/* <ToggleEdit
           jobDescription={props.jobDescription}
           setJobDescription={props.setJobDescription}
           setLlmResult={props.setLlmResult}
-        />
+        /> */}
         <ColumnOutput llmResult={props.llmResult} />
-        <ExportFile />
+        {/* <ExportFile /> */}
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import youtube from "../../../assets/youtube.png";
 
 const ActionCheckBox = (props) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -10,9 +11,16 @@ const ActionCheckBox = (props) => {
   return (
     <div
       style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
         textAlign: "left",
-        gap:'',
+        margin: 0,
+        padding: "1rem",
         textDecoration: isChecked ? "line-through" : undefined,
+        gap: "1rem",
+        borderBottom:
+          props.index === props.lastIndex ? 0 : "1px solid var(--color-third)",
       }}
     >
       <input
@@ -27,10 +35,15 @@ const ActionCheckBox = (props) => {
           margin: "0",
           fontWeight: "300",
           marginBottom: "0.5rem",
-          marginRight:'0.3rem',
+          marginRight: "0.3rem",
         }}
       />
       {props.item}
+      <img
+        alt="Youtube link"
+        src={youtube}
+        style={{ height: "16px", width: "16px" }}
+      />
     </div>
   );
 };

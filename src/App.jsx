@@ -20,10 +20,11 @@ function App() {
     <div
       className="App"
       style={{
-        display:'flex',
-        flexDirection:'column',
-        height: 'calc(100vh - 60px)',
-      }}>
+        display: "flex",
+        flexDirection: "column",
+        height: "calc(100vh - 60px)",
+      }}
+    >
       <Route
         setRoute={setRoute}
         jobDescription={jobDescription}

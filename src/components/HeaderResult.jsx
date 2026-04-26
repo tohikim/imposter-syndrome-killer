@@ -1,7 +1,7 @@
-import logo from "../assets/logo.png";
+import reloadicon from "../assets/reload.png";
 import shareicon from "../assets/share.png";
 
-const Header = (props) => {
+const HeaderResult = (props) => {
   const handleClick = (e) => {
     e.preventDefault();
     props.setRoute("home");
@@ -9,7 +9,7 @@ const Header = (props) => {
   };
   const sthelse = (e) => {
     e.preventDefault();
-  }
+  };
   return (
     <>
       <div
@@ -41,12 +41,12 @@ const Header = (props) => {
           >
             <img
               className="logo"
-              src={logo}
+              src={reloadicon}
               style={{
-                height: 33,
-                width: 33,
-                padding: "1rem",
+                height: 70,
+                width: 70,
                 margin: 0,
+                padding: 0,
               }}
             />
           </button>
@@ -98,4 +98,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default HeaderResult;

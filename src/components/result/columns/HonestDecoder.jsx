@@ -1,29 +1,33 @@
 import { useState } from "react";
 
 const HonestDecoder = ({ llmResult }) => {
-  console.log({ llmResult });
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div>
+    <div
+      className="role-decode"
+      style={{
+        width: "80vw",
+        marginTop: "2rem",
+        border: 0,
+        gap: "1rem",
+        padding: "1.5rem",
+        textAlign: "left",
+      }}
+    >
       <div
-        className="role-decode"
         style={{
-          width: "80vw",
-          color: "var(--color-secondary)",
-          marginTop: "2rem",
-          border: "1px solid var(--color-primary)",
-          backgroundColor: "var(--color-bg-black",
-          borderRadius: "15px",
-          paddingBottom: "1rem",
-          gap: "1rem",
-          padding: "1.5rem",
-          textAlign: "left",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          verticalAlign: "center",
+          borderBottom: "1.5px solid var(--color-third)",
         }}
       >
         <h4
           style={{
-            fontSize: "1.2rem",
+            fontSize: "1.3rem",
             paddingBottom: "0.7rem",
             textAlign: "left",
             padding: 0,
@@ -34,82 +38,75 @@ const HonestDecoder = ({ llmResult }) => {
         >
           Honest Decoder
         </h4>
-        <h6
-          style={{
-            fontSize: "1rem",
-            paddingBottom: "0.7rem",
-            marginBottom: "0.2rem",
-            textAlign: "left",
-            fontWeight: "400",
-          }}
-        >
-          The Real Role
-        </h6>
-        <p
-          style={{
-            fontSize: "0.9rem",
-            textAlign: "justify",
-            padding: "0",
-            margin: "0",
-            fontWeight: "300",
-            marginBottom: "1rem",
-          }}
-        >
-          {"llmResult.decoder.roleOverview"}
-        </p>
-        <h6
-          style={{
-            fontSize: "1rem",
-            paddingBottom: "0.7rem",
-            marginBottom: "0.2rem",
-            textAlign: "left",
-            fontWeight: "400",
-          }}
-        >
-          Brutally Honest Take
-        </h6>
-        <p
-          style={{
-            fontSize: "0.9rem",
-            textAlign: "justify",
-            padding: "0",
-            margin: "0",
-            fontWeight: "300",
-            marginBottom: "1rem",
-          }}
-        >
-          {llmResult.decoder.honestTake}
-        </p>
         <button
           onClick={() => setToggle(!toggle)}
           style={{
-            fontSize: "1rem",
-            textAlign: "left",
-            padding: "0.5rem",
+            border: 0,
+            backgroundColor: "transparent",
+            fontSize: "1.3rem",
+            paddingBottom: "0.7rem",
+            textAlign: "right",
+            padding: 0,
             margin: 0,
             fontWeight: "400",
-            backgroundColor: "transparent",
-            border: "1pt solid var(--color-secondary)",
-            borderRadius: "15px",
-            color: "var(--color-secondary)",
+            marginBottom: "1rem",
           }}
         >
-          What does this mean?
+          +
         </button>
-        {toggle && (
+      </div>
+      {toggle && (
+        <div>
+          <h6
+            style={{
+              fontSize: "18px",
+              paddingBottom: "0.7rem",
+              marginBottom: "0.2rem",
+              textAlign: "left",
+              fontWeight: "400",
+            }}
+          >
+            The Real Role
+          </h6>
           <p
             style={{
-              marginTop: "0.5rem",
-              fontSize: "0.9rem",
-              textAlign: "justify",
-              fontWeight: "300",
-              paddingLeft: "6%",
+              fontSize: "18px",
+              textAlign: "left",
+              padding: "0",
+              margin: "0",
+              fontWeight: "100",
+              marginBottom: "1rem",
+              lineHeight: "1.6rem",
+            }}
+          >
+            {llmResult.decoder.roleOverview}
+          </p>
+          <h6
+            style={{
+              fontSize: "18px",
+              paddingBottom: "0.7rem",
+              marginBottom: "0.2rem",
+              textAlign: "left",
+              fontWeight: "400",
+            }}
+          >
+            Honest Take
+          </h6>
+          <p
+            style={{
+              fontSize: "18px",
+              textAlign: "left",
+              padding: "0",
+              margin: "0",
+              fontWeight: "100",
+              marginBottom: "1rem",
+              lineHeight: "1.6rem",
             }}
           >
             {llmResult.decoder.honestTake}
           </p>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
