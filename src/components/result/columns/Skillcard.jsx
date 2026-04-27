@@ -1,37 +1,47 @@
-import { useState } from "react";
-
 const statuses = [
   {
     label: "Click to set",
     background: "transparent",
+    progress: undefined,
   },
   {
     label: "I know this",
     background: "#EBF7ED",
+    progress: 1,
   },
   {
     label: "Learning",
     background: "#FEF6D5",
+    progress: 0.5,
   },
   {
     label: "No clue",
     background: "#FCEBEB",
+    progress: 0,
   },
 ];
 
 const Skillcard = (props) => {
-  const [statusIndex, setStatusIndex] = useState(0);
-
-  const status = statuses[statusIndex];
+  const status = statuses[props.statusIndex];
 
   const handleClick = (e) => {
     e.preventDefault();
-    setStatusIndex((prev) => {
-      if (statusIndex < 3) {
-        return prev + 1;
-      } else {
-        return 0;
-      }
+    props.setSkillStatuses((prev) => {
+      return prev.map((skillStatus) => {
+        if (skillStatus.label === props.value) {
+          let newStatusIndex = skillStatus.statusIndex;
+
+          if (newStatusIndex < 3) {
+            newStatusIndex = newStatusIndex + 1;
+          } else {
+            newStatusIndex = 0;
+          }
+
+          return { label: skillStatus.label, statusIndex: newStatusIndex };
+        }
+
+        return skillStatus;
+      });
     });
   };
 
@@ -41,21 +51,17 @@ const Skillcard = (props) => {
       style={{
         ...styles.container,
         background: status.background,
-        borderRadius:
-          props.index === 0
-            ? "15px 15px 0 0"
-            : props.index === props.lastIndex
-              ? "0 0 15px 15px"
-              : 0,
+        borderRadius: props.firstIndex
+          ? "15px 15px 0 0"
+          : props.lastIndex
+            ? "0 0 15px 15px"
+            : 0,
       }}
     >
       <div
         style={{
           ...styles.section,
-          borderBottom:
-            props.index === props.lastIndex
-              ? 0
-              : "1px solid var(--color-third)",
+          borderBottom: props.lastIndex ? 0 : "1px solid var(--color-third)",
         }}
       >
         <p style={styles.value}>{props.value}</p>

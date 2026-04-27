@@ -7,7 +7,10 @@ import InfoContainer from "../components/InfoContainer.jsx";
 function Home(props) {
   return (
     <>
-      <Header setRoute={props.setRoute} />
+      <Header
+        setRoute={props.setRoute}
+        setJobDescription={props.setJobDescription}
+      />
       <div style={styles.container}>
         <TitleContainer />
         <div style={styles.section}>

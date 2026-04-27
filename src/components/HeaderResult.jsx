@@ -8,7 +8,7 @@ const HeaderResult = (props) => {
     props.setRoute("home");
     props.setJobDescription("");
   };
-  const sthelse = (e) => {
+  const handleShare = (e) => {
     e.preventDefault();
   };
   return (
@@ -23,7 +23,7 @@ const HeaderResult = (props) => {
           <p style={styles.modelName}>ISK 1.0</p>
         </div>
         <div style={styles.iconContainer}>
-          <button onClick={sthelse} style={styles.button}>
+          <button onClick={handleShare} style={styles.button}>
             <img src={shareicon} style={styles.icon} />
           </button>
         </div>

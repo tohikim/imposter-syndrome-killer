@@ -1,8 +1,20 @@
+import { useState } from "react";
 import ActionPlan from "./columns/ActionPlan";
 import HonestDecoder from "./columns/HonestDecoder";
 import SkillAssessment from "./columns/SkillAssessment";
 
+const formatSkillStatuses = (skills) => {
+  return skills.map((skill) => {
+    return { label: skill.label, statusIndex: 0 };
+  });
+};
+
 const ColumnOutput = (props) => {
+  const [skillStatuses, setSkillStatuses] = useState(
+    formatSkillStatuses(props.llmResult.skills),
+  );
+
+  console.log(skillStatuses);
   const handleClick = (e) => {
     e.preventDefault();
   };
@@ -14,7 +26,11 @@ const ColumnOutput = (props) => {
           Share
         </button>
         <HonestDecoder llmResult={props.llmResult} />
-        <SkillAssessment llmResult={props.llmResult} />
+        <SkillAssessment
+          llmResult={props.llmResult}
+          skillStatuses={skillStatuses}
+          setSkillStatuses={setSkillStatuses}
+        />
         <ActionPlan llmResult={props.llmResult} />
       </div>
     </>

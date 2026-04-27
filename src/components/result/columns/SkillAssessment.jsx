@@ -2,7 +2,7 @@ import { useState } from "react";
 import Skillcard from "./Skillcard";
 import { styles as honestDecoderStyles } from "./HonestDecoder";
 
-const SkillAssessment = ({ llmResult }) => {
+const SkillAssessment = (props) => {
   const [toggle, setToggle] = useState(true);
   return (
     <div className="skill-check" style={honestDecoderStyles.singleColumnDiv}>
@@ -21,14 +21,18 @@ const SkillAssessment = ({ llmResult }) => {
       {toggle && (
         <div>
           <ul style={styles.actionDiv}>
-            {llmResult.skills.map((skill, index) => {
-              const lastIndex = llmResult.skills.length - 1;
+            {props.llmResult.skills.map((skill, index) => {
+              const firstIndex = index === 0;
+              const lastIndex = index === props.llmResult.skills.length - 1;
               return (
                 <Skillcard
                   key={skill.label}
                   value={skill.label}
-                  index={index}
+                  statusIndex={props.skillStatuses[index].statusIndex}
+                  setSkillStatuses={props.setSkillStatuses}
+                  firstIndex={firstIndex}
                   lastIndex={lastIndex}
+                  // skillStatuses={props.skillStatuses}
                 />
               );
             })}

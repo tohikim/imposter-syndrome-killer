@@ -14,8 +14,6 @@ const ActionCheckBox = (props) => {
     return window.open(url);
   };
 
-  console.log(link);
-
   return (
     <div
       style={{
@@ -80,6 +78,7 @@ const styles = {
     fontWeight: "300",
     marginBottom: "0.5rem",
     marginRight: "0.3rem",
+    fontSize: "18px",
   },
   img: {
     height: "15px",

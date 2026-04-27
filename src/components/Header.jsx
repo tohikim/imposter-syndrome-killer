@@ -31,7 +31,7 @@ const Header = (props) => {
   );
 };
 
-const styles = {
+export const styles = {
   container: {
     display: "flex",
     flexDirection: "row",
@@ -39,6 +39,7 @@ const styles = {
     height: "fit-content",
     verticalAlign: "top",
     padding: "1rem",
+    width: "100vw",
   },
   logoContainer: { alignItems: "left", margin: "0", padding: "0" },
   button: {

@@ -55,7 +55,7 @@ const ActionPlan = ({ llmResult }) => {
 
 const styles = {
   h6: {
-    ...honestDecoderhonestDecoderStyles.h6,
+    ...honestDecoderStyles.h6,
     padding: 0,
     margin: 0,
   },
