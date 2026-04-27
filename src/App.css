@@ -2,13 +2,15 @@
   font-family: "Intel", sans-serif;
   --color-primary: #000000;
   --color-secondary: #808080;
-  --color-third:#f0efef;
+  --color-third: #f0efef;
+  --color-fourth: #808080ac;
   --color-accent: #000000;
-  --color-background:#e3e3e370;
-  
+  --color-background: #e3e3e370;
+  --color-checked: dodgerblue;
+
   /* Variety/Semantic Colors */
   --color-bg-white: #ffffff;
-  --color-bg-black:#000000;
+  --color-bg-black: #000000;
   /* This is the magic line */
 }
 
@@ -16,4 +18,31 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 6px;
+  border: 1px solid var(--color-fourth);
+  border-radius: 50px;
+  position: absolute;
+}
+
+input.checked {
+  padding: 0.5rem;
+  border-color: var(--color-third);
+}
+
+input.checked::before {
+  content: "●";
+  font-size: 3rem;
+  color: var(--color-third);
+  position: absolute;
+  right: -2.7px;
+  top: -18.8px;
 }

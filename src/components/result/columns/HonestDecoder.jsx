@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const HonestDecoder = ({ llmResult }) => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
 
   return (
     <div

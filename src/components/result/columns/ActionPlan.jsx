@@ -2,7 +2,7 @@ import { useState } from "react";
 import ActionCheckBox from "./ActionCheckBox";
 
 const ActionPlan = ({ llmResult }) => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
 
   return (
     <div>
@@ -86,9 +86,8 @@ const ActionPlan = ({ llmResult }) => {
                       style={{
                         border: "1px solid var(--color-third",
                         borderRadius: "15px",
-                        marginTop:'0.6rem',
-                        color:'var(--color-secondary',
-                        textAlign:'left'
+                        marginTop: "0.6rem",
+                        textAlign: "left",
                       }}
                     >
                       {skill.actionItems.map((item, index) => {
