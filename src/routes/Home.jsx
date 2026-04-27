@@ -1,5 +1,5 @@
 import Header from "../components/Header.jsx";
-import Footer from "../components/@deprecated/@deprecated Footer.jsx";
+import Footer from "../@deprecated/@deprecated Footer.jsx";
 import TitleContainer from "../components/TitleContainer.jsx";
 import InputContainer from "../components/InputContainer.jsx";
 import InfoContainer from "../components/InfoContainer.jsx";

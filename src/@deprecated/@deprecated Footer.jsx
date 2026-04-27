@@ -1,4 +1,4 @@
-import ShareButton from "../result/Sharebutton.jsx";
+import ShareButton from "../components/result/Sharebutton.jsx";
 
 const Footer = () => {
   return (
