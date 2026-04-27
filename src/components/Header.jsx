@@ -9,93 +9,56 @@ const Header = (props) => {
   };
   const sthelse = (e) => {
     e.preventDefault();
-  }
+  };
   return (
     <>
-      <div
-        className="header-container"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          height: "fit-content",
-          verticalAlign: "top",
-          padding: "1rem",
-        }}
-      >
-        <div
-          className="logo-container"
-          style={{
-            alignItems: "left",
-            margin: "0",
-            padding: "0",
-          }}
-        >
-          <button
-            onClick={handleClick}
-            style={{
-              backgroundColor: "transparent",
-              borderWidth: "0",
-              alignItems: "right",
-            }}
-          >
-            <img
-              className="logo"
-              src={logo}
-              style={{
-                height: 33,
-                width: 33,
-                padding: "1rem",
-                margin: 0,
-              }}
-            />
+      <div style={styles.container}>
+        <div style={styles.logoContainer}>
+          <button onClick={handleClick} style={styles.button}>
+            <img src={logo} style={styles.logo} />
           </button>
         </div>
-        <div
-          style={{
-            color: "var(--color-secondary)",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "1rem",
-              padding: "0.5rem 0 0 1rem",
-            }}
-          >
-            ISK 1.0
-          </p>
+        <div>
+          <p style={styles.modelName}>ISK 1.0</p>
         </div>
-        <div
-          className="icon-container"
-          style={{
-            alignItems: "right",
-            margin: "0",
-            padding: "0",
-          }}
-        >
-          <button
-            onClick={sthelse}
-            style={{
-              backgroundColor: "transparent",
-              borderWidth: "0",
-              alignItems: "right",
-            }}
-          >
-            <img
-              className="shareicon"
-              src={shareicon}
-              style={{
-                height: 70,
-                width: 70,
-                margin: 0,
-                padding: 0,
-              }}
-            />
+        <div style={styles.iconContainer}>
+          <button onClick={sthelse} style={styles.button}>
+            <img src={shareicon} style={styles.icon} />
           </button>
         </div>
       </div>
     </>
   );
+};
+
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    height: "fit-content",
+    verticalAlign: "top",
+    padding: "1rem",
+  },
+  logoContainer: { alignItems: "left", margin: "0", padding: "0" },
+  button: {
+    backgroundColor: "transparent",
+    borderWidth: "0",
+    alignItems: "right",
+  },
+  logo: {
+    height: 33,
+    width: 33,
+    padding: "1rem",
+    margin: 0,
+  },
+  modelName: {
+    color: "var(--color-secondary)",
+    fontSize: "1rem",
+    padding: "0.5rem 0 0 1rem",
+  },
+  iconContainer: { alignItems: "right", margin: "0", padding: "0" },
+  icon: { height: 70, width: 70, margin: 0, padding: 0 },
 };
 
 export default Header;

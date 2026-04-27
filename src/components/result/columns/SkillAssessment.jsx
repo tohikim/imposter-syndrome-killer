@@ -1,77 +1,26 @@
 import { useState } from "react";
 import Skillcard from "./Skillcard";
+import { styles as honestDecoderStyles } from "./HonestDecoder";
 
 const SkillAssessment = ({ llmResult }) => {
   const [toggle, setToggle] = useState(true);
   return (
-    <div
-      className="skill-check"
-      style={{
-        width: "80vw",
-        marginTop: "2rem",
-        border: 0,
-        paddingBottom: "1rem",
-        gap: "1rem",
-        padding: "1.5rem",
-        textAlign: "left",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-          verticalAlign: "center",
-          borderBottom: "1.5px solid var(--color-third)",
-        }}
-      >
-        <h4
-          style={{
-            fontSize: "1.3rem",
-            paddingBottom: "0.7rem",
-            textAlign: "left",
-            padding: 0,
-            margin: 0,
-            fontWeight: "400",
-            marginBottom: "1rem",
-          }}
-        >
-          Skill Assessment
-        </h4>
+    <div className="skill-check" style={honestDecoderStyles.singleColumnDiv}>
+      <div style={honestDecoderStyles.columnTitleDiv}>
+        <h4 style={honestDecoderStyles.h4}>Skill Assessment</h4>
         <button
           onClick={(e) => {
             e.preventDefault();
             setToggle(!toggle);
           }}
-          style={{
-            border: 0,
-            backgroundColor: "transparent",
-            fontSize: "1.3rem",
-            paddingBottom: "0.7rem",
-            textAlign: "right",
-            padding: 0,
-            margin: 0,
-            fontWeight: "400",
-            marginBottom: "1rem",
-          }}
+          style={honestDecoderStyles.toggleButton}
         >
           +
         </button>
       </div>
       {toggle && (
         <div>
-          <ul
-            style={{
-              margin: 0,
-              marginTop: "1rem",
-              padding: 0,
-              border: "1px solid var(--color-third)",
-              borderRadius: "15px",
-              gap: 0,
-              lineheight: "fit-content",
-            }}
-          >
+          <ul style={styles.actionDiv}>
             {llmResult.skills.map((skill, index) => {
               const lastIndex = llmResult.skills.length - 1;
               return (
@@ -88,6 +37,19 @@ const SkillAssessment = ({ llmResult }) => {
       )}
     </div>
   );
+};
+
+const styles = {
+  ...honestDecoderStyles,
+  actionDiv: {
+    margin: 0,
+    marginTop: "1rem",
+    padding: 0,
+    border: "1px solid var(--color-third)",
+    borderRadius: "15px",
+    gap: 0,
+    lineheight: "fit-content",
+  },
 };
 
 export default SkillAssessment;

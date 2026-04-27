@@ -1,59 +1,18 @@
 import { useState } from "react";
 import ActionCheckBox from "./ActionCheckBox";
+import { styles as honestDecoderStyles } from "./HonestDecoder";
 
 const ActionPlan = ({ llmResult }) => {
   const [toggle, setToggle] = useState(true);
 
   return (
     <div>
-      <div
-        className="learn-list"
-        style={{
-          width: "80vw",
-          marginTop: "2rem",
-          border: 0,
-          paddingBottom: "1rem",
-          gap: "1rem",
-          padding: "1.5rem",
-          textAlign: "left",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            verticalAlign: "center",
-            borderBottom: "1.5px solid var(--color-third)",
-          }}
-        >
-          <h4
-            style={{
-              fontSize: "1.3rem",
-              paddingBottom: "0.7rem",
-              textAlign: "left",
-              padding: 0,
-              margin: 0,
-              fontWeight: "400",
-              marginBottom: "1rem",
-            }}
-          >
-            Action Plan
-          </h4>
+      <div className="learn-list" style={honestDecoderStyles.singleColumnDiv}>
+        <div style={honestDecoderStyles.columnTitleDiv}>
+          <h4 style={honestDecoderStyles.h4}>Action Plan</h4>
           <button
             onClick={() => setToggle(!toggle)}
-            style={{
-              border: 0,
-              backgroundColor: "transparent",
-              fontSize: "1.3rem",
-              paddingBottom: "0.7rem",
-              textAlign: "right",
-              padding: 0,
-              margin: 0,
-              fontWeight: "400",
-              marginBottom: "1rem",
-            }}
+            style={honestDecoderStyles.toggleButton}
           >
             +
           </button>
@@ -69,27 +28,8 @@ const ActionPlan = ({ llmResult }) => {
               {llmResult.skills.map((skill) => {
                 return (
                   <div key={skill.label} style={{ marginBottom: 20 }}>
-                    <h6
-                      style={{
-                        fontSize: "18px",
-                        padding: 0,
-                        margin: 0,
-                        paddingTop: "0.7rem",
-                        marginBottom: "0.2rem",
-                        textAlign: "left",
-                        fontWeight: "400",
-                      }}
-                    >
-                      {skill.label}
-                    </h6>
-                    <div
-                      style={{
-                        border: "1px solid var(--color-third",
-                        borderRadius: "15px",
-                        marginTop: "0.6rem",
-                        textAlign: "left",
-                      }}
-                    >
+                    <h6 style={styles.h6}>{skill.label}</h6>
+                    <div style={styles.skillDiv}>
                       {skill.actionItems.map((item, index) => {
                         const lastIndex = skill.actionItems.length - 1;
                         return (
@@ -111,6 +51,20 @@ const ActionPlan = ({ llmResult }) => {
       </div>
     </div>
   );
+};
+
+const styles = {
+  h6: {
+    ...honestDecoderhonestDecoderStyles.h6,
+    padding: 0,
+    margin: 0,
+  },
+  skillDiv: {
+    border: "1px solid var(--color-third",
+    borderRadius: "15px",
+    marginTop: "0.6rem",
+    textAlign: "left",
+  },
 };
 
 export default ActionPlan;

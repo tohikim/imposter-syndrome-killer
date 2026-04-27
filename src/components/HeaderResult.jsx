@@ -1,5 +1,6 @@
 import reloadicon from "../assets/reload.png";
 import shareicon from "../assets/share.png";
+import { styles } from "./Header";
 
 const HeaderResult = (props) => {
   const handleClick = (e) => {
@@ -12,85 +13,18 @@ const HeaderResult = (props) => {
   };
   return (
     <>
-      <div
-        className="header-container"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          height: "fit-content",
-          verticalAlign: "top",
-          padding: "1rem",
-        }}
-      >
-        <div
-          className="logo-container"
-          style={{
-            alignItems: "left",
-            margin: "0",
-            padding: "0",
-          }}
-        >
-          <button
-            onClick={handleClick}
-            style={{
-              backgroundColor: "transparent",
-              borderWidth: "0",
-              alignItems: "right",
-            }}
-          >
-            <img
-              className="logo"
-              src={reloadicon}
-              style={{
-                height: 70,
-                width: 70,
-                margin: 0,
-                padding: 0,
-              }}
-            />
+      <div style={styles.container}>
+        <div style={styles.logoContainer}>
+          <button onClick={handleClick} style={styles.button}>
+            <img src={reloadicon} style={styles.icon} />
           </button>
         </div>
-        <div
-          style={{
-            color: "var(--color-secondary)",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "1rem",
-              padding: "0.5rem 0 0 1rem",
-            }}
-          >
-            ISK 1.0
-          </p>
+        <div>
+          <p style={styles.modelName}>ISK 1.0</p>
         </div>
-        <div
-          className="icon-container"
-          style={{
-            alignItems: "right",
-            margin: "0",
-            padding: "0",
-          }}
-        >
-          <button
-            onClick={sthelse}
-            style={{
-              backgroundColor: "transparent",
-              borderWidth: "0",
-              alignItems: "right",
-            }}
-          >
-            <img
-              className="shareicon"
-              src={shareicon}
-              style={{
-                height: 70,
-                width: 70,
-                margin: 0,
-                padding: 0,
-              }}
-            />
+        <div style={styles.iconContainer}>
+          <button onClick={sthelse} style={styles.button}>
+            <img src={shareicon} style={styles.icon} />
           </button>
         </div>
       </div>

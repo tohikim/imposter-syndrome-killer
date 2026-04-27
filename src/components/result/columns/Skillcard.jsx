@@ -39,57 +39,60 @@ const Skillcard = (props) => {
     <button
       onClick={handleClick}
       style={{
-        border: 0,
+        ...styles.container,
+        background: status.background,
         borderRadius:
           props.index === 0
             ? "15px 15px 0 0"
             : props.index === props.lastIndex
               ? "0 0 15px 15px"
               : 0,
-        padding: 0,
-        margin: "0 2rem 0 0",
-        background: status.background,
-        fontSize: "18px",
-        width: "100%",
       }}
     >
       <div
         style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
+          ...styles.section,
           borderBottom:
             props.index === props.lastIndex
               ? 0
               : "1px solid var(--color-third)",
-          width: "100%",
-          alignitems: "center",
-          padding: 0,
-          margin: 0,
         }}
       >
-        <p
-          style={{
-            color: "var(--color-secondary)",
-            fontSize: "18px",
-            padding: "1rem",
-            margin: 0,
-            verticalAlign: "center",
-          }}
-        >
-          {props.value}
-        </p>
-        <p
-          style={{
-            padding: "1rem",
-            margin: 0,
-          }}
-        >
-          {status.label}
-        </p>
+        <p style={styles.value}>{props.value}</p>
+        <p style={styles.label}>{status.label}</p>
       </div>
     </button>
   );
+};
+
+const styles = {
+  container: {
+    border: 0,
+    padding: 0,
+    margin: "0 2rem 0 0",
+    fontSize: "18px",
+    width: "100%",
+  },
+  section: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+    alignitems: "center",
+    padding: 0,
+    margin: 0,
+  },
+  value: {
+    color: "var(--color-secondary)",
+    fontSize: "18px",
+    padding: "1rem",
+    margin: 0,
+    verticalAlign: "center",
+  },
+  label: {
+    padding: "1rem",
+    margin: 0,
+  },
 };
 
 export default Skillcard;

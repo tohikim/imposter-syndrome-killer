@@ -1,5 +1,4 @@
 import "./App.css";
-// import background from './assets/background2.jpg';
 import { useState } from "react";
 import Home from "./routes/Home";
 import Result from "./routes/Result";
@@ -17,14 +16,7 @@ function App() {
   const Route = routes[route];
 
   return (
-    <div
-      className="App"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "calc(100vh - 60px)",
-      }}
-    >
+    <div style={styles.container}>
       <Route
         setRoute={setRoute}
         jobDescription={jobDescription}
@@ -35,5 +27,14 @@ function App() {
     </div>
   );
 }
+
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    textAlign: "center",
+  },
+};
 
 export default App;

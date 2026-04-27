@@ -1,5 +1,5 @@
 import Header from "../components/Header.jsx";
-import Footer from "../components/Footer.jsx";
+import Footer from "../components/@deprecated/@deprecated Footer.jsx";
 import TitleContainer from "../components/TitleContainer.jsx";
 import InputContainer from "../components/InputContainer.jsx";
 import InfoContainer from "../components/InfoContainer.jsx";
@@ -8,30 +8,9 @@ function Home(props) {
   return (
     <>
       <Header setRoute={props.setRoute} />
-      <div
-        className="body"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          height: "100vh",
-          // verticalAlign: "space-between",
-          justifyContent: "space-between",
-          fontFamily: "var(--font-family)",
-          padding:0,
-          margin:0
-        }}
-      >
+      <div style={styles.container}>
         <TitleContainer />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height:'fit-content',
-            fontFamily: "var(--font-family)",
-            margin:0,
-            padding:0,
-          }}
-        >
+        <div style={styles.section}>
           <InfoContainer />
           <InputContainer
             setRoute={props.setRoute}
@@ -44,5 +23,25 @@ function Home(props) {
     </>
   );
 }
+
+const styles = {
+  body: {
+    display: "flex",
+    flexDirection: "column",
+    height: "100vh",
+    justifyContent: "space-between",
+    fontFamily: "var(--font-family)",
+    padding: 0,
+    margin: 0,
+  },
+  section: {
+    display: "flex",
+    flexDirection: "column",
+    height: "fit-content",
+    fontFamily: "var(--font-family)",
+    margin: 0,
+    padding: 0,
+  },
+};
 
 export default Home;
