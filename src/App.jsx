@@ -34,6 +34,8 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     textAlign: "center",
+    height: "100vh",
+    width: "100vw",
   },
 };
 

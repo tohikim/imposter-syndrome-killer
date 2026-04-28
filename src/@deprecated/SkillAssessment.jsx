@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Skillcard from "./Skillcard";
-import { styles as honestDecoderStyles } from "./HonestDecoder";
+import { styles as honestDecoderStyles } from "../components/HonestDecoder";
 
 const SkillAssessment = (props) => {
   const [toggle, setToggle] = useState(true);

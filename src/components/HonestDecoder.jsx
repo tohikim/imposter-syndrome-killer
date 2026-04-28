@@ -1,24 +1,18 @@
 import { useState } from "react";
 
-const HonestDecoder = ({ llmResult }) => {
+const HonestDecoder = (props) => {
   const [toggle, setToggle] = useState(true);
 
   return (
     <div style={styles.singleColumnDiv}>
+      <h4 style={styles.h4}>{props.llmResult.decoder.roleTitle}</h4>
+      <h6 style={styles.h6}>The Real Role</h6>
+      {toggle && <p style={styles.p}>{props.llmResult.decoder.roleOverview}</p>}
       <div style={styles.columnTitleDiv}>
-        <h4 style={styles.h4}>Honest Decoder</h4>
-        <button onClick={() => setToggle(!toggle)} style={styles.toggleButton}>
-          +
+        <button onClick={() => setToggle(!toggle)} style={styles.p}>
+          {toggle ? "Read less" : "Read more"}
         </button>
       </div>
-      {toggle && (
-        <div>
-          <h6 style={styles.h6}>The Real Role</h6>
-          <p style={styles.p}>{llmResult.decoder.roleOverview}</p>
-          <h6 style={styles.h6}>Honest Take</h6>
-          <p style={styles.p}>{llmResult.decoder.honestTake}</p>
-        </div>
-      )}
     </div>
   );
 };
@@ -38,7 +32,6 @@ export const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     verticalAlign: "center",
-    borderBottom: "1.5px solid var(--color-third)",
   },
   h4: {
     fontSize: "1.3rem",

@@ -5,12 +5,18 @@ import "./ActionCheckBox.css";
 const ActionCheckBox = (props) => {
   const [isChecked, setIsChecked] = useState(false);
 
+  // const [statusIndex, setStatusIndex] = useState(
+  //   props.skillStatuses[props.skillStatusIndex].statusIndex,
+  // );
+
   const handleOnChange = () => {
-    setIsChecked((prev) => !prev);
+    setIsChecked(!isChecked);
+    // setStatusIndex(2);
   };
 
   const link = () => {
-    const url = "https://www.youtube.com/results?search_query=" + props.item;
+    const url =
+      "https://www.youtube.com/results?search_query=" + props.actionItem;
     return window.open(url);
   };
 
@@ -19,14 +25,13 @@ const ActionCheckBox = (props) => {
       style={{
         ...styles.container,
         color: isChecked ? "var(--color-third)" : "var(--color-secondary)",
-        borderBottom:
-          props.index === props.lastIndex ? 0 : "1px solid var(--color-third)",
+        borderBottom: props.lastIndex ? 0 : "1px solid var(--color-third)",
       }}
     >
       <input
         className={isChecked ? "checked" : ""}
         type="checkbox"
-        value={props.item}
+        value={props.actionItem}
         checked={isChecked}
         onChange={handleOnChange}
       />
@@ -36,7 +41,7 @@ const ActionCheckBox = (props) => {
           textDecoration: isChecked ? "line-through" : undefined,
         }}
       >
-        {props.item}
+        {props.actionItem}
       </span>
       <button
         onClick={link}
@@ -70,7 +75,7 @@ const styles = {
     gap: "1rem",
   },
   span: {
-    fontSize: "0.9rem",
+    fontSize: "18px",
     textAlign: "left",
     padding: "0",
     margin: "0",
@@ -78,7 +83,6 @@ const styles = {
     fontWeight: "300",
     marginBottom: "0.5rem",
     marginRight: "0.3rem",
-    fontSize: "18px",
   },
   img: {
     height: "15px",

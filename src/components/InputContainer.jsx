@@ -55,7 +55,8 @@ const styles = {
   },
   button: {
     borderRadius: "50px",
-    backgroundColor: "var(--color-accent)",
+    border: 0,
+    backgroundColor: "var(--color-navy)",
     padding: "0.2rem 0 0 0",
     height: "45px",
     width: "45px",
@@ -63,8 +64,8 @@ const styles = {
     float: "right",
   },
   arrow: {
-    width: "18px",
-    height: "23x",
+    width: "16px",
+    height: "21x",
     margin: 0,
   },
 };

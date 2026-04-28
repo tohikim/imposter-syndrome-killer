@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import reloadicon from "../assets/reload.png";
 import shareicon from "../assets/share.png";
 
 const Header = (props) => {
@@ -7,31 +7,36 @@ const Header = (props) => {
     props.setRoute("home");
     props.setJobDescription("");
   };
-  const sthelse = (e) => {
+  const handleShare = (e) => {
     e.preventDefault();
+
+    /** @todo handle share */
+    console.log("Share clicked");
   };
   return (
     <>
       <div style={styles.container}>
-        <div style={styles.logoContainer}>
-          <button onClick={handleClick} style={styles.button}>
-            <img src={logo} style={styles.logo} />
-          </button>
+        <div style={styles.restartContainer}>
+          {props.enableRestart && (
+            <button onClick={handleClick} style={styles.button}>
+              <img src={reloadicon} style={styles.icon} />
+            </button>
+          )}
         </div>
-        <div>
-          <p style={styles.modelName}>ISK 1.0</p>
-        </div>
+        <p style={styles.modelName}>ISK 1.0</p>
         <div style={styles.iconContainer}>
-          <button onClick={sthelse} style={styles.button}>
-            <img src={shareicon} style={styles.icon} />
-          </button>
+          {props.enableShare && (
+            <button onClick={handleShare} style={styles.button}>
+              <img src={shareicon} style={styles.icon} />
+            </button>
+          )}
         </div>
       </div>
     </>
   );
 };
 
-export const styles = {
+const styles = {
   container: {
     display: "flex",
     flexDirection: "row",
@@ -41,22 +46,17 @@ export const styles = {
     padding: "1rem",
     width: "100vw",
   },
-  logoContainer: { alignItems: "left", margin: "0", padding: "0" },
+  restartContainer: { alignItems: "left", margin: "0", padding: "0" },
   button: {
     backgroundColor: "transparent",
     borderWidth: "0",
     alignItems: "right",
   },
-  logo: {
-    height: 33,
-    width: 33,
-    padding: "1rem",
-    margin: 0,
-  },
   modelName: {
     color: "var(--color-secondary)",
     fontSize: "1rem",
-    padding: "0.5rem 0 0 1rem",
+    textAlign: "center",
+    paddingTop: "0.5rem",
   },
   iconContainer: { alignItems: "right", margin: "0", padding: "0" },
   icon: { height: 70, width: 70, margin: 0, padding: 0 },

@@ -1,5 +1,4 @@
 import Header from "../components/Header.jsx";
-import Footer from "../@deprecated/@deprecated Footer.jsx";
 import TitleContainer from "../components/TitleContainer.jsx";
 import InputContainer from "../components/InputContainer.jsx";
 import InfoContainer from "../components/InfoContainer.jsx";
@@ -10,6 +9,8 @@ function Home(props) {
       <Header
         setRoute={props.setRoute}
         setJobDescription={props.setJobDescription}
+        enableRestart={false}
+        enableShare={false}
       />
       <div style={styles.container}>
         <TitleContainer />
@@ -28,7 +29,7 @@ function Home(props) {
 }
 
 const styles = {
-  body: {
+  container: {
     display: "flex",
     flexDirection: "column",
     height: "100vh",

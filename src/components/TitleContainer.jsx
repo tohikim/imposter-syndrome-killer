@@ -27,7 +27,7 @@ const styles = {
     fontWeight: "500",
     margin: "0",
     padding: "0",
-    color: "var(--color-bg-black)",
+    color: "var(--color-navy)",
   },
   tag: {
     display: "flex",

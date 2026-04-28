@@ -1,16 +1,19 @@
-import HeaderResult from "../components/HeaderResult";
-import ColumnOutput from "../components/result/ColumnOutput.jsx";
+import Header from "../components/Header";
+import HonestDecoder from "../components/HonestDecoder";
+import Skills from "../components/Skills.jsx";
 
 function Result(props) {
   return (
     <>
-      <HeaderResult
+      <Header
         setRoute={props.setRoute}
         setJobDescription={props.setJobDescription}
+        enableRestart
+        enableShare
       />
       <div style={styles.container}>
-        <ColumnOutput llmResult={props.llmResult} />
-        {/* <ExportFile /> */}
+        <HonestDecoder llmResult={props.llmResult} />
+        <Skills />
       </div>
     </>
   );
@@ -21,7 +24,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    textAlign: "center",
+    textAlign: "left",
   },
 };
 
