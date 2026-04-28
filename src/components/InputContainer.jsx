@@ -12,7 +12,14 @@ const InputContainer = (props) => {
 
     const llmOutput = await getLlmOutput(props.jobDescription);
 
+    if (!llmOutput) {
+      alert("Something went wrong, please try again.");
+
+      return;
+    }
+
     props.setLlmResult(llmOutput);
+
     props.setRoute("result");
   };
   return (

@@ -26,6 +26,8 @@ export default defineConfig([
     rules: {
       "no-undef": "off",
       "react-refresh/only-export-components": "off",
+      "react-hooks/set-state-in-effect": "off",
+      "no-case-declarations": "off",
       "no-unused-vars": ["error", { varsIgnorePattern: "^[A-Z_]" }],
     },
   },

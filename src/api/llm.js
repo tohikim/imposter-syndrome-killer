@@ -67,5 +67,5 @@ export const getLlmOutput = async (jobDescription) => {
     },
   );
 
-  return response.data.candidates?.[0].content?.parts?.[0]?.text;
+  return JSON.parse(response.data.candidates?.[0].content?.parts?.[0]?.text);
 };
