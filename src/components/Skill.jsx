@@ -3,36 +3,6 @@ import { useEffect, useState } from "react";
 import { formatActionItemsToState } from "../utils/format-action-items-to-state";
 import { skillStatuses } from "../constants/skill-statuses";
 import "./ActionCheckBox.css";
-import "./Skill.css";
-// import ReactDOM from "react-dom";
-// import Select from "react-select";
-
-// const Options = () => {
-// skillStatuses.map((status, index) => {
-//     const isDefault = index === 0;
-//     return (
-//       <option
-//         key={status.label}
-//         disabled={isDefault}
-//         defaultValue={isDefault}
-//         value={index}
-//         style={styles.option}
-//       >
-//         {status.label}
-//       </option>
-//     );
-//   });
-// };
-
-// const CustomControl = () => (
-//   <Select
-//     defaultValue={Options[0]}
-//     // formatOptionLabel={formatOptionLabel}
-//     options={Options}
-//   />
-// );
-
-// ReactDOM.render = (CustomControl(), document.getElementById("root"));
 
 const Skill = (props) => {
   const [statusIndex, setStatusIndex] = useState(0);
@@ -84,7 +54,6 @@ const Skill = (props) => {
         }}
       >
         <h6 style={styles.h6}>{props.skill.label}</h6>
-        {/* <div style={{ display: "flex" }}>{Options()}</div> */}
         <form>
           <select
             value={statusIndex}
@@ -191,8 +160,6 @@ const Skill = (props) => {
 
 const styles = {
   container: {
-    margin: 0,
-    padding: 0,
     marginBottom: 28,
     width: "100%",
     border: "1px solid var(--color-third)",
@@ -202,6 +169,7 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     padding: "1rem",
     borderTopLeftRadius: 14,
     borderTopRightRadius: 14,
@@ -213,7 +181,6 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "flex-start",
     textAlign: "left",
-    margin: 0,
     padding: "1rem",
     gap: "1rem",
     position: "relative",

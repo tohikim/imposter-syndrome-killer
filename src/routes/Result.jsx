@@ -4,9 +4,8 @@ import Score from "../components/Score";
 import Skill from "../components/Skill.jsx";
 
 function Result(props) {
-  // console.log(props.llmResult.skills);
   return (
-    <>
+    <div>
       <Header
         setRoute={props.setRoute}
         setJobDescription={props.setJobDescription}
@@ -24,7 +23,7 @@ function Result(props) {
           return <Skill skill={skill} key={index} />;
         })}
       </div>
-    </>
+    </div>
   );
 }
 

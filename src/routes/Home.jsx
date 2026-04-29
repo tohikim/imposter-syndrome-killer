@@ -4,71 +4,65 @@ import InputContainer from "../components/InputContainer.jsx";
 import InfoContainer from "../components/InfoContainer.jsx";
 import { Mirage } from "ldrs/react";
 import "ldrs/react/Mirage.css";
+import { useState } from "react";
 
 function Home(props) {
-  if (props.loading) {
-    return (
-      <div style={styles.loading}>
-        <Mirage
-          size="60"
-          speed="2.5"
-          color="var(--color-navy)"
-          position="relative"
-        />
-        <p style={styles.p}>We're loading your result...</p>
-      </div>
-    );
-  }
+  const [loading, setLoading] = useState(false);
+
   return (
-    <>
+    <div>
       <Header
         setRoute={props.setRoute}
         setJobDescription={props.setJobDescription}
         enableRestart={false}
         enableShare={false}
       />
-      <div style={styles.container}>
-        <TitleContainer />
-        <div style={styles.section}>
-          <InfoContainer />
-          <InputContainer
-            setRoute={props.setRoute}
-            jobDescription={props.jobDescription}
-            setJobDescription={props.setJobDescription}
-            setLlmResult={props.setLlmResult}
-            loading={props.loading}
-            setLoading={props.setLoading}
+      {loading ? (
+        <div style={styles.loading}>
+          <Mirage
+            size="60"
+            speed="2.5"
+            color="var(--color-navy)"
+            position="relative"
           />
+          <p style={styles.p}>We're loading your result...</p>
         </div>
-      </div>
-    </>
+      ) : (
+        <div style={styles.content}>
+          <TitleContainer />
+          <div style={styles.section}>
+            <InfoContainer />
+            <InputContainer
+              setRoute={props.setRoute}
+              jobDescription={props.jobDescription}
+              setJobDescription={props.setJobDescription}
+              setLlmResult={props.setLlmResult}
+              loading={loading}
+              setLoading={setLoading}
+            />
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
 const styles = {
-  container: {
+  content: {
     display: "flex",
     flexDirection: "column",
-    height: "100vh",
     justifyContent: "space-between",
-    padding: 0,
-    margin: 0,
   },
   section: {
     display: "flex",
     flexDirection: "column",
-    height: "fit-content",
-    margin: 0,
-    padding: 0,
   },
   loading: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
-    padding: 0,
-    margin: 0,
+    height: "65vh",
   },
   p: {
     fontSize: "18px",

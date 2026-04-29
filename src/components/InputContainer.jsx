@@ -1,4 +1,4 @@
-import { getLlmOutput } from "../api/llm";
+import { getLlmOutput } from "../api/get-llm-output";
 import arrow from "../assets/arrow.png";
 
 const InputContainer = (props) => {
@@ -6,24 +6,30 @@ const InputContainer = (props) => {
     e.preventDefault();
     props.setLoading(true);
 
-    if (!props.jobDescription) {
-      alert("Please enter a job description");
-      return;
+    try {
+      if (!props.jobDescription) {
+        alert("Please enter a job description");
+
+        return;
+      }
+
+      const llmOutput = await getLlmOutput(props.jobDescription);
+
+      if (!llmOutput) {
+        alert("Something went wrong, please try again.");
+        throw new Error("Could not get llm output");
+      }
+
+      props.setLlmResult(llmOutput);
+
+      props.setRoute("result");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      props.setLoading(false);
     }
-
-    const llmOutput = await getLlmOutput(props.jobDescription);
-
-    if (!llmOutput) {
-      alert("Something went wrong, please try again.");
-
-      return;
-    }
-
-    props.setLlmResult(llmOutput);
-
-    props.setRoute("result");
-    props.setLoading(false);
   };
+
   return (
     <div style={styles.container}>
       <form onSubmit={onSubmit}>
@@ -46,13 +52,11 @@ const styles = {
   container: {
     boxShadow: "0 0 20px var(--color-third), 0 0 40px var(--color-third)",
     borderRadius: "25px",
-    marginBottom: "0.5rem",
-    padding: 0,
-    alignSelf: "center",
-    width: "95vw",
+    marginBottom: "1rem",
+    marginLeft: "1.25rem",
+    marginRight: "1.25rem",
   },
   textarea: {
-    margin: 0,
     border: "0",
     borderRadius: "25px",
     color: "var(--color-primary)",
@@ -66,16 +70,16 @@ const styles = {
     borderRadius: "50px",
     border: 0,
     backgroundColor: "var(--color-navy)",
-    padding: "0.2rem 0 0 0",
+    paddingTop: "0.2rem",
     height: "45px",
     width: "45px",
     margin: "1rem",
+    marginTop: "0.4rem",
     float: "right",
   },
   arrow: {
     width: "16px",
     height: "21x",
-    margin: 0,
   },
 };
 

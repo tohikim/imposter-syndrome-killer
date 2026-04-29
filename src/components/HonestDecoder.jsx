@@ -76,8 +76,6 @@ const HonestDecoder = (props) => {
 
 export const styles = {
   singleColumnDiv: {
-    margin: 0,
-    border: 0,
     gap: "1rem",
     textAlign: "left",
     width: "100%",

@@ -33,8 +33,6 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     gap: "10px",
-    margin: 0,
-    padding: 0,
   },
   text: {
     border: "1px solid var(--color-third)",
