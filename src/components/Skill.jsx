@@ -1,19 +1,19 @@
 import youtube from "../assets/youtube.png";
 import { useEffect, useState } from "react";
-import { formatActionItemsToState } from "../utils/format-action-items-to-state";
 import { skillStatuses } from "../constants/skill-statuses";
 import "./ActionCheckBox.css";
+import { formatArrayToTargetObject } from "../utils/format-array-to-target-object";
 
 const Skill = (props) => {
   const [statusIndex, setStatusIndex] = useState(0);
   const [checked, setChecked] = useState(
-    formatActionItemsToState(props.skill.actionItems, false),
+    formatArrayToTargetObject(props.skill.actionItems, false),
   );
 
   useEffect(() => {
     switch (statusIndex) {
       case 1:
-        setChecked(formatActionItemsToState(props.skill.actionItems, true));
+        setChecked(formatArrayToTargetObject(props.skill.actionItems, true));
         break;
       case 2:
         const allAreTrue = props.skill.actionItems.every(
@@ -21,11 +21,11 @@ const Skill = (props) => {
         );
 
         if (allAreTrue) {
-          setChecked(formatActionItemsToState(props.skill.actionItems, false));
+          setChecked(formatArrayToTargetObject(props.skill.actionItems, false));
         }
         break;
       case 3:
-        setChecked(formatActionItemsToState(props.skill.actionItems, false));
+        setChecked(formatArrayToTargetObject(props.skill.actionItems, false));
         break;
       default:
         break;
@@ -33,13 +33,22 @@ const Skill = (props) => {
   }, [statusIndex]);
 
   useEffect(() => {
-    const areAllTrue = props.skill.actionItems.every((item) => checked[item]);
-    const someAreTrue = props.skill.actionItems.some((item) => checked[item]);
+    const skillsToUpdateCount = props.skill.actionItems.reduce((acc, cur) => {
+      if (checked[cur]) {
+        acc += 1;
 
-    if (areAllTrue) {
+        return acc;
+      }
+
+      return acc;
+    }, 0);
+
+    props.updateSkillScore(skillsToUpdateCount);
+
+    if (props.skill.actionItems.length === skillsToUpdateCount) {
       setStatusIndex(1);
       return;
-    } else if (someAreTrue) {
+    } else if (skillsToUpdateCount > 0) {
       setStatusIndex(2);
       return;
     }

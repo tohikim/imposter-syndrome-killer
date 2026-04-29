@@ -1,9 +1,21 @@
+import { useState } from "react";
 import Header from "../components/Header";
 import HonestDecoder from "../components/HonestDecoder";
 import Score from "../components/Score";
 import Skill from "../components/Skill.jsx";
+import { mapStateToCurrentScore } from "../utils/map-state-to-current-score";
+import { formatArrayToTargetObject } from "../utils/format-array-to-target-object";
 
 function Result(props) {
+  const [currentScoreTracker, setCurrentScoreTracker] = useState(
+    formatArrayToTargetObject(props.llmResult.skills, 0, "label"),
+  );
+
+  const totalScore = props.llmResult.skills.reduce((acc, cur) => {
+    acc = acc + cur.actionItems.length;
+    return acc;
+  }, 0);
+
   return (
     <div>
       <Header
@@ -14,13 +26,26 @@ function Result(props) {
       />
       <div style={styles.container}>
         <HonestDecoder llmResult={props.llmResult} />
-        <Score />
+        <Score
+          currentScore={mapStateToCurrentScore(currentScoreTracker)}
+          totalScore={totalScore}
+        />
         <p style={styles.p}>
           Improve your job readiness score by assessing your technical skills
           below.
         </p>
         {props.llmResult.skills.map((skill, index) => {
-          return <Skill skill={skill} key={index} />;
+          return (
+            <Skill
+              skill={skill}
+              updateSkillScore={(score) => {
+                setCurrentScoreTracker((prev) => {
+                  return { ...prev, [skill.label]: score };
+                });
+              }}
+              key={index}
+            />
+          );
         })}
       </div>
     </div>

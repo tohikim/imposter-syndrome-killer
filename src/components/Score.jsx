@@ -3,7 +3,9 @@ import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Score = () => {
+const Score = (props) => {
+  const percentage = `${Math.round((props.currentScore / props.totalScore) * 100)}%`;
+
   return (
     <>
       <h6 style={styles.h6}>Your Readiness Score</h6>
@@ -12,7 +14,10 @@ const Score = () => {
           data={{
             datasets: [
               {
-                data: [4, 6],
+                data: [
+                  props.currentScore,
+                  props.totalScore - props.currentScore,
+                ],
                 backgroundColor: ["#002e57", "#002e5725"],
                 circumference: 180,
                 borderWidth: 0,
@@ -23,19 +28,18 @@ const Score = () => {
           plugins={[
             {
               id: "centerText",
-              afterDatasetsDraw(chart) {
+              afterDatasetsDraw(chart, _args, pluginOptions) {
                 const { ctx } = chart;
                 const meta = chart.getDatasetMeta(0);
                 const x = meta.data[0].x;
                 const y = meta.data[0].y;
 
                 ctx.save();
-                const text = "40%";
                 ctx.font = "bold 50px Arial";
                 ctx.fillStyle = "#002e57";
                 ctx.textAlign = "center";
                 ctx.textBaseline = "bottom";
-                ctx.fillText(text, x, y + 5);
+                ctx.fillText(pluginOptions.value, x, y + 5);
                 ctx.restore();
               },
             },
@@ -47,6 +51,9 @@ const Score = () => {
             plugins: {
               legend: { display: false },
               tooltip: { enabled: false },
+              centerText: {
+                value: percentage,
+              },
             },
           }}
           style={{
