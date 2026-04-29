@@ -13,41 +13,57 @@ const Score = () => {
             datasets: [
               {
                 data: [4, 6],
-                backgroundColor: ["dodgerblue", "tomato"],
-                borderColor: ["var(--color-navy)", "var(--color-third)"],
+                backgroundColor: ["#002e57", "#002e5725"],
                 circumference: 180,
                 borderWidth: 0,
                 rotation: 270,
               },
             ],
           }}
-          options={{}}
+          plugins={[
+            {
+              id: "centerText",
+              afterDatasetsDraw(chart) {
+                const { ctx } = chart;
+                const meta = chart.getDatasetMeta(0);
+                const x = meta.data[0].x;
+                const y = meta.data[0].y;
+
+                ctx.save();
+                const text = "40%";
+                ctx.font = "bold 50px Arial";
+                ctx.fillStyle = "#002e57";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "bottom";
+                ctx.fillText(text, x, y + 5);
+                ctx.restore();
+              },
+            },
+          ]}
+          options={{
+            cutout: "89%",
+            aspectRatio: 2,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: { display: false },
+              tooltip: { enabled: false },
+            },
+          }}
           style={{
             width: `${GRAPH_WIDTH_IN_VIEW_WIDTH}vw`,
           }}
         />
-        <h1
-          style={{
-            textAlign: "center",
-            position: "absolute",
-            bottom: 60,
-            left: `calc(${GRAPH_WIDTH_IN_VIEW_WIDTH / 2}vw - ${ARBITRARY_PROGRESS_PERCENTAGE_BOX_WIDTH / 2}px)`,
-            width: `${ARBITRARY_PROGRESS_PERCENTAGE_BOX_WIDTH}px`,
-          }}
-        >
-          40%
-        </h1>
       </div>
     </>
   );
 };
 
 const GRAPH_WIDTH_IN_VIEW_WIDTH = 80;
-const ARBITRARY_PROGRESS_PERCENTAGE_BOX_WIDTH = 80;
 
 const styles = {
   doughnutContainer: {
     position: "relative",
+    padding: "2rem 0 3rem 0",
   },
   h6: {
     fontSize: "18px",
