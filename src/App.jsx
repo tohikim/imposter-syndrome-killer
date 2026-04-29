@@ -12,6 +12,7 @@ function App() {
   const [route, setRoute] = useState("home");
   const [jobDescription, setJobDescription] = useState("");
   const [llmResult, setLlmResult] = useState();
+  let [loading, setLoading] = useState(false);
 
   const Route = routes[route];
 
@@ -23,6 +24,8 @@ function App() {
         setJobDescription={setJobDescription}
         llmResult={llmResult}
         setLlmResult={setLlmResult}
+        loading={loading}
+        setLoading={setLoading}
       />
     </div>
   );
@@ -30,12 +33,15 @@ function App() {
 
 const styles = {
   container: {
+    height: "100vh",
+    width: "100vw",
+    margin: 0,
+    padding: 0,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     textAlign: "center",
-    height: "100vh",
-    width: "100vw",
+    fontFamily: "var(--font-family)",
   },
 };
 

@@ -4,6 +4,7 @@ import arrow from "../assets/arrow.png";
 const InputContainer = (props) => {
   const onSubmit = async (e) => {
     e.preventDefault();
+    props.setLoading(true);
 
     if (!props.jobDescription) {
       alert("Please enter a job description");
@@ -21,6 +22,7 @@ const InputContainer = (props) => {
     props.setLlmResult(llmOutput);
 
     props.setRoute("result");
+    props.setLoading(false);
   };
   return (
     <div style={styles.container}>

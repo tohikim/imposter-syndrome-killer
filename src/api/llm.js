@@ -2,7 +2,12 @@ import axios from "axios";
 import mockResult from "../__mocks__/llm-result.json";
 
 export const getLlmOutput = async (jobDescription) => {
+  const delay = (ms) => {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  };
+
   if (import.meta.env.VITE_DEBUG === "1" && jobDescription.length < 5) {
+    await delay(2000);
     return mockResult;
   }
 

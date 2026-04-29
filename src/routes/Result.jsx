@@ -4,7 +4,7 @@ import Score from "../components/Score";
 import Skill from "../components/Skill.jsx";
 
 function Result(props) {
-  console.log(props.llmResult.skills);
+  // console.log(props.llmResult.skills);
   return (
     <>
       <Header
@@ -41,7 +41,7 @@ const styles = {
     padding: "0",
     margin: "0",
     fontWeight: "100",
-    marginBottom: "1rem",
+    marginBottom: "5rem",
     lineHeight: "1.6rem",
   },
 };

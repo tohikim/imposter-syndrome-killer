@@ -1,8 +1,38 @@
-import { useEffect, useState } from "react";
 import youtube from "../assets/youtube.png";
-import "./ActionCheckBox.css";
+import { useEffect, useState } from "react";
 import { formatActionItemsToState } from "../utils/format-action-items-to-state";
 import { skillStatuses } from "../constants/skill-statuses";
+import "./ActionCheckBox.css";
+import "./Skill.css";
+// import ReactDOM from "react-dom";
+// import Select from "react-select";
+
+// const Options = () => {
+// skillStatuses.map((status, index) => {
+//     const isDefault = index === 0;
+//     return (
+//       <option
+//         key={status.label}
+//         disabled={isDefault}
+//         defaultValue={isDefault}
+//         value={index}
+//         style={styles.option}
+//       >
+//         {status.label}
+//       </option>
+//     );
+//   });
+// };
+
+// const CustomControl = () => (
+//   <Select
+//     defaultValue={Options[0]}
+//     // formatOptionLabel={formatOptionLabel}
+//     options={Options}
+//   />
+// );
+
+// ReactDOM.render = (CustomControl(), document.getElementById("root"));
 
 const Skill = (props) => {
   const [statusIndex, setStatusIndex] = useState(0);
@@ -54,9 +84,11 @@ const Skill = (props) => {
         }}
       >
         <h6 style={styles.h6}>{props.skill.label}</h6>
+        {/* <div style={{ display: "flex" }}>{Options()}</div> */}
         <form>
           <select
             value={statusIndex}
+            style={styles.statusIndex}
             onChange={(e) => {
               e.preventDefault();
               setStatusIndex(+e.target.value);
@@ -64,13 +96,13 @@ const Skill = (props) => {
           >
             {skillStatuses.map((status, index) => {
               const isDefault = index === 0;
-
               return (
                 <option
                   key={status.label}
                   disabled={isDefault}
                   defaultValue={isDefault}
                   value={index}
+                  style={styles.option}
                 >
                   {status.label}
                 </option>
@@ -112,14 +144,27 @@ const Skill = (props) => {
                   });
                 }}
               />
-              <span
+              <button
+                onClick={() => {
+                  setChecked((prev) => {
+                    return {
+                      ...prev,
+                      [item]: !isChecked,
+                    };
+                  });
+                }}
                 style={{
-                  ...styles.span,
-                  textDecoration: isChecked ? "line-through" : undefined,
+                  ...styles.inputValue,
+                  textDecoration: isChecked
+                    ? "line-through var(--color-third)"
+                    : undefined,
+                  color: isChecked
+                    ? "var(--color-third)"
+                    : "var(--color-secondary)",
                 }}
               >
                 {item}
-              </span>
+              </button>
               <button
                 onClick={link}
                 style={{
@@ -149,6 +194,7 @@ const styles = {
     margin: 0,
     padding: 0,
     marginBottom: 28,
+    width: "100%",
     border: "1px solid var(--color-third)",
     borderRadius: 15,
   },
@@ -159,6 +205,7 @@ const styles = {
     padding: "1rem",
     borderTopLeftRadius: 14,
     borderTopRightRadius: 14,
+    borderBottom: "1px solid var(--color-third)",
   },
   section: {
     display: "flex",
@@ -169,16 +216,20 @@ const styles = {
     margin: 0,
     padding: "1rem",
     gap: "1rem",
+    position: "relative",
   },
-  span: {
+  inputValue: {
     fontSize: "18px",
     textAlign: "left",
     padding: "0",
     margin: "0",
-    marginLeft: "45px",
     fontWeight: "300",
+    lineHeight: "1.4rem",
     marginBottom: "0.5rem",
     marginRight: "0.3rem",
+    position: "relative",
+    background: "transparent",
+    border: "0",
   },
   img: {
     height: "15px",
@@ -200,6 +251,12 @@ const styles = {
     borderRadius: "15px",
     marginTop: "0.6rem",
     textAlign: "left",
+  },
+  statusIndex: {
+    border: 0,
+    background: "transparent",
+    fontSize: "18px",
+    paddingRight: "1rem",
   },
 };
 
