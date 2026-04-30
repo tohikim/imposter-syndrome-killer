@@ -20,7 +20,7 @@ const styles = {
     gap: "20px",
     paddingTop: "2rem",
     paddingBotton: "2rem",
-    height: "30vh",
+    height: "25vh",
   },
   title: {
     fontSize: "1.4rem",

@@ -5,7 +5,7 @@ const defaultHeight = "100";
 const ToggleButton = ({ isExpanded, onClick }) => {
   return (
     <button style={styles.btnToggle} onClick={onClick}>
-      {isExpanded ? "Read less" : "Read more"}
+      {isExpanded ? "Show less" : "Show more"}
     </button>
   );
 };
@@ -35,12 +35,10 @@ const HonestDecoder = (props) => {
     setIsExpanded((prev) => !prev);
   };
 
-  // const [toggle, setToggle] = useState(true);
-
   return (
     <div style={styles.singleColumnDiv}>
       <h4 style={styles.h4}>{props.llmResult.decoder.roleTitle}</h4>
-      <h6 style={styles.h6}>The Real Role</h6>
+      {/* <h6 style={styles.h6}>The Real Role</h6> */}
       <div
         className={`${isExpanded ? "expanded" : "collapsed"} text-display`}
         style={{
@@ -49,11 +47,6 @@ const HonestDecoder = (props) => {
           animation: isExpanded
             ? "mask-expanding 0.5s"
             : "mask-collapsing 0.5s",
-          // transition:
-          //   "mask-image 0.3s ease-in-out, -webkit-mask-image 0.3s ease-in-out",
-          // WebkitMaskImage: isExpanded
-          //   ? "linear-gradient(black 100%, transparent)"
-          //   : "linear-gradient(black 50%, transparent)",
           maskImage: isExpanded
             ? "linear-gradient(black 100%, transparent)"
             : "linear-gradient(black 50%, transparent)",
@@ -64,12 +57,6 @@ const HonestDecoder = (props) => {
       {isOverflow && (
         <ToggleButton isExpanded={isExpanded} onClick={handleClickBtn} />
       )}
-      {/* {toggle && <p style={styles.p}>{props.llmResult.decoder.roleOverview}</p>}
-      <div style={styles.columnTitleDiv}>
-        <button onClick={() => setToggle(!toggle)} style={styles.readButton}>
-          {toggle ? "Read less" : "Read more"}
-        </button>
-      </div> */}
     </div>
   );
 };
@@ -81,6 +68,7 @@ export const styles = {
     width: "100%",
     minHeight: "100px",
     padding: "4px",
+    marginBottom: "1rem",
   },
   columnTitleDiv: {
     display: "flex",
@@ -95,7 +83,7 @@ export const styles = {
     textAlign: "left",
     padding: 0,
     margin: 0,
-    marginBottom: "1.5rem",
+    marginBottom: "1rem",
     fontWeight: "400",
     color: "var(--color-navy)",
   },

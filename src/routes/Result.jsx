@@ -30,10 +30,6 @@ function Result(props) {
           currentScore={mapStateToCurrentScore(currentScoreTracker)}
           totalScore={totalScore}
         />
-        <p style={styles.p}>
-          Improve your job readiness score by assessing your technical skills
-          below.
-        </p>
         {props.llmResult.skills.map((skill, index) => {
           return (
             <Skill
@@ -58,15 +54,6 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     padding: "2rem",
-  },
-  p: {
-    fontSize: "18px",
-    textAlign: "left",
-    padding: "0",
-    margin: "0",
-    fontWeight: "100",
-    marginBottom: "5rem",
-    lineHeight: "1.6rem",
   },
 };
 

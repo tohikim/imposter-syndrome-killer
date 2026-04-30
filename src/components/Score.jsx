@@ -1,5 +1,6 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import { BiBorderRadius } from "react-icons/bi";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -7,8 +8,7 @@ const Score = (props) => {
   const percentage = `${Math.round((props.currentScore / props.totalScore) * 100)}%`;
 
   return (
-    <>
-      <h6 style={styles.h6}>Your Readiness Score</h6>
+    <div style={styles.container}>
       <div style={styles.doughnutContainer}>
         <Doughnut
           data={{
@@ -45,7 +45,7 @@ const Score = (props) => {
             },
           ]}
           options={{
-            cutout: "89%",
+            cutout: "87%",
             aspectRatio: 2,
             maintainAspectRatio: true,
             plugins: {
@@ -61,23 +61,46 @@ const Score = (props) => {
           }}
         />
       </div>
-    </>
+      <div styles={styles.textsContainer}>
+        <h6 style={styles.h6}>Your Readiness Score</h6>
+        <p style={styles.p}>
+          Improve your job readiness score by assessing your technical skills
+          below.
+        </p>
+      </div>
+    </div>
   );
 };
 
-const GRAPH_WIDTH_IN_VIEW_WIDTH = 80;
+const GRAPH_WIDTH_IN_VIEW_WIDTH = 70;
 
 const styles = {
+  container: {
+    // border: "1px solid var(--color-third)",
+    borderRadius: "15px",
+    marginBottom: "2rem",
+    padding: "1rem",
+  },
   doughnutContainer: {
     position: "relative",
-    padding: "2rem 0 3rem 0",
+    padding: "2rem 0 0 0",
   },
+  textsContainer: { alignSelf: "center", textAlign: "center" },
   h6: {
     fontSize: "18px",
     paddingBottom: "0.7rem",
     marginBottom: "0.2rem",
     fontWeight: "400",
-    alignSelf: "flex-start",
+    textAlign: "center",
+  },
+  p: {
+    fontSize: "18px",
+    textAlign: "center",
+    padding: "0",
+    margin: "0",
+    fontWeight: "100",
+    marginBottom: "3rem",
+    lineHeight: "1.6rem",
   },
 };
 

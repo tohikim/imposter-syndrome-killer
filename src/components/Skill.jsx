@@ -1,7 +1,6 @@
 import youtube from "../assets/youtube.png";
 import { useEffect, useState } from "react";
 import { skillStatuses } from "../constants/skill-statuses";
-import "./ActionCheckBox.css";
 import { formatArrayToTargetObject } from "../utils/format-array-to-target-object";
 
 const Skill = (props) => {
@@ -55,10 +54,17 @@ const Skill = (props) => {
   }, [checked]);
 
   return (
-    <div key={props.skill.label} style={styles.container}>
+    <div
+      key={props.skill.label}
+      style={{
+        ...styles.container,
+        borderColor: skillStatuses[statusIndex].borderColor,
+      }}
+    >
       <div
         style={{
           ...styles.topSection,
+          borderBottom: `1px solid ${skillStatuses[statusIndex].borderColor}`,
           backgroundColor: skillStatuses[statusIndex].background,
         }}
       >
@@ -90,8 +96,8 @@ const Skill = (props) => {
         </form>
       </div>
       <div style={styles.skillDiv}>
-        {props.skill.actionItems.map((item, index) => {
-          const lastIndex = index === props.skill.actionItems.length - 1;
+        {props.skill.actionItems.map((item) => {
+          // const lastIndex = index === props.skill.actionItems.length - 1;
           const isChecked = checked[item];
           const link = () => {
             const url = "https://www.youtube.com/results?search_query=" + item;
@@ -105,7 +111,8 @@ const Skill = (props) => {
                 color: isChecked
                   ? "var(--color-third)"
                   : "var(--color-secondary)",
-                borderBottom: lastIndex ? 0 : "1px solid var(--color-third)",
+                borderBottom: 0,
+                // lastIndex ? 0 : `1px solid var(--color-third)`,
               }}
             >
               <input
@@ -171,7 +178,7 @@ const styles = {
   container: {
     marginBottom: 28,
     width: "100%",
-    border: "1px solid var(--color-third)",
+    border: "1px solid",
     borderRadius: 15,
   },
   topSection: {
@@ -182,7 +189,6 @@ const styles = {
     padding: "1rem",
     borderTopLeftRadius: 14,
     borderTopRightRadius: 14,
-    borderBottom: "1px solid var(--color-third)",
   },
   section: {
     display: "flex",

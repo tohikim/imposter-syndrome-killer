@@ -5,9 +5,8 @@ const InfoContainer = () => {
     <div style={styles.container}>
       <img alt="info mark" src={infomark} style={styles.icon} />
       <p style={styles.text}>
-        We rephrase your job description and break down the actual skillsets
-        needed for each job as well as your job readiness. No more applying
-        blindly and feeling like an imposter.
+        We translate complex JDs into simple skill checklists so you can apply
+        with confidence.
       </p>
     </div>
   );
